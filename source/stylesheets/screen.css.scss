@@ -625,3 +625,12 @@ html, body {
 .highlight, .highlight .w {
   background-color: $code-bg;
 }
+
+.tocify-wrapper>svg {
+  width: 80%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  margin-left: 50%;
+  margin-top: 15px;
+  fill: #0792d4;
+}
