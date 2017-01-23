@@ -42,12 +42,13 @@ customProperties[].value |
 
 ### Queries
 
-* `student(id: <id>)`
-* `students(ids: [<ids>])`
+* `student(studentId: <id>)`
+* `students(studentIds: [<ids>])`
+* `studentsList(filter: <Student List Filter Input>)`
 
 ### Mutations
 
-* `createStudent(input: <body>)`
-* `updateStudent(id: <id>, input: <body>)`
-* `upsertStudent(input: <body>)`
-* `deleteStudent(id: <id>)`
+* `studentCreate(input: <body>)`
+* `studentUpdate(id: <id>, input: <body>)`
+* `studentUpsert(input: <body>)`
+* `studentDelete(id: <id>)`

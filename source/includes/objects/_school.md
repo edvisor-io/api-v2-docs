@@ -11,7 +11,8 @@ website |
 address | 
 instituteNumber | 
 location | 
-countryid | 
+countryId | 
+country | The Country object
 currency | 
 twitter | 
 facebook | 
@@ -21,6 +22,10 @@ schoolBannerFileId |
 featuredVideoUrl | 
 walkscore | 
 mapUrl | 
+courses | An array of Course objects
+accommodations | An array of Accommodation objects
+addons | An array of Addon objects
+fees | An array of Fee objects
 
 
 ### Queries
