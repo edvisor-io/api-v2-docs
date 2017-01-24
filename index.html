@@ -464,17 +464,18 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <h3 id="queries">Queries</h3>
 
 <ul>
-<li><code class="prettyprint">student(id: &lt;id&gt;)</code></li>
-<li><code class="prettyprint">students(ids: [&lt;ids&gt;])</code></li>
+<li><code class="prettyprint">student(studentId: &lt;id&gt;)</code></li>
+<li><code class="prettyprint">students(studentIds: [&lt;ids&gt;])</code></li>
+<li><code class="prettyprint">studentsList(filter: &lt;Student List Filter Input&gt;)</code></li>
 </ul>
 
 <h3 id="mutations">Mutations</h3>
 
 <ul>
-<li><code class="prettyprint">createStudent(input: &lt;body&gt;)</code></li>
-<li><code class="prettyprint">updateStudent(id: &lt;id&gt;, input: &lt;body&gt;)</code></li>
-<li><code class="prettyprint">upsertStudent(input: &lt;body&gt;)</code></li>
-<li><code class="prettyprint">deleteStudent(id: &lt;id&gt;)</code></li>
+<li><code class="prettyprint">studentCreate(input: &lt;body&gt;)</code></li>
+<li><code class="prettyprint">studentUpdate(id: &lt;id&gt;, input: &lt;body&gt;)</code></li>
+<li><code class="prettyprint">studentUpsert(input: &lt;body&gt;)</code></li>
+<li><code class="prettyprint">studentDelete(id: &lt;id&gt;)</code></li>
 </ul>
 
           <h2 id="student-course-preference">Student Course Preference</h2>
@@ -653,6 +654,58 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 </tr>
 </tbody></table>
 
+          <h2 id="school-company">School Company</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>schoolCompanyId</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td></td>
+</tr>
+<tr>
+<td>phone</td>
+<td></td>
+</tr>
+<tr>
+<td>address</td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td></td>
+</tr>
+<tr>
+<td>websiteUrl</td>
+<td></td>
+</tr>
+<tr>
+<td>created</td>
+<td></td>
+</tr>
+<tr>
+<td>modified</td>
+<td></td>
+</tr>
+<tr>
+<td>schools</td>
+<td>An array of School objects</td>
+</tr>
+</tbody></table>
+
+<h3 id="queries">Queries</h3>
+
+<ul>
+<li><code class="prettyprint">schoolCompany</code></li>
+</ul>
+
           <h2 id="school">School</h2>
 
 <table><thead>
@@ -698,8 +751,12 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <td></td>
 </tr>
 <tr>
-<td>countryid</td>
+<td>countryId</td>
 <td></td>
+</tr>
+<tr>
+<td>country</td>
+<td>The Country object</td>
 </tr>
 <tr>
 <td>currency</td>
@@ -736,6 +793,22 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <tr>
 <td>mapUrl</td>
 <td></td>
+</tr>
+<tr>
+<td>courses</td>
+<td>An array of Course objects</td>
+</tr>
+<tr>
+<td>accommodations</td>
+<td>An array of Accommodation objects</td>
+</tr>
+<tr>
+<td>addons</td>
+<td>An array of Addon objects</td>
+</tr>
+<tr>
+<td>fees</td>
+<td>An array of Fee objects</td>
 </tr>
 </tbody></table>
 
@@ -1639,6 +1712,60 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <li><code class="prettyprint">deleteAddon(id: &lt;id&gt;)</code></li>
 </ul>
 
+          <h2 id="fee">Fee</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>feeId</td>
+<td></td>
+</tr>
+<tr>
+<td>schoolId</td>
+<td></td>
+</tr>
+<tr>
+<td>agencyId</td>
+<td></td>
+</tr>
+<tr>
+<td>currencyId</td>
+<td></td>
+</tr>
+<tr>
+<td>internalNotes</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td></td>
+</tr>
+<tr>
+<td>isGlobal</td>
+<td></td>
+</tr>
+<tr>
+<td>isEnabled</td>
+<td></td>
+</tr>
+<tr>
+<td>isQuoteDefault</td>
+<td></td>
+</tr>
+<tr>
+<td>created</td>
+<td></td>
+</tr>
+<tr>
+<td>modified</td>
+<td></td>
+</tr>
+</tbody></table>
+
           <h2 id="promotion">Promotion</h2>
 
 <table><thead>
@@ -1938,6 +2065,44 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <li><code class="prettyprint">upsertStudentEnrollment(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">deleteStudentEnrollment(id: &lt;id&gt;)</code></li>
 </ul>
+
+          <h2 id="country">Country</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>countryId</td>
+<td></td>
+</tr>
+<tr>
+<td>code</td>
+<td>The country code</td>
+</tr>
+<tr>
+<td>continent</td>
+<td></td>
+</tr>
+<tr>
+<td>currencyId</td>
+<td></td>
+</tr>
+<tr>
+<td>languageId</td>
+<td></td>
+</tr>
+<tr>
+<td>nameTranslationId</td>
+<td></td>
+</tr>
+<tr>
+<td>translation(language: &lsquo;en&rsquo;)</td>
+<td>A function which will return a translation object with <code class="prettyprint">translation</code> as an attribute. The only parameter is a language code.</td>
+</tr>
+</tbody></table>
 
           <h1 id="errors">Errors</h1>
 
