@@ -32,6 +32,10 @@ includes:
   - objects/promotion
   - objects/student-enrollment
   - objects/country
+  - objects/list-result
+  - inputs
+  - inputs/pagination
+  - inputs/student-get-list-filter
   - errors
 
 search: true
