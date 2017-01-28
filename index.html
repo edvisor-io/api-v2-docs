@@ -464,9 +464,9 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <h3 id="queries">Queries</h3>
 
 <ul>
-<li><code class="prettyprint">student(studentId: &lt;id&gt;)</code></li>
-<li><code class="prettyprint">students(studentIds: [&lt;ids&gt;])</code></li>
-<li><code class="prettyprint">studentsList(filter: &lt;Student List Filter Input&gt;)</code></li>
+<li><code class="prettyprint">student(studentId: &lt;id&gt;): Student Object</code></li>
+<li><code class="prettyprint">students(studentIds: [&lt;ids&gt;]): Array&lt;Student Object&gt;</code></li>
+<li><code class="prettyprint">studentsList(pagination: &lt;Pagination Input&gt;, filter: &lt;Student List Filter Input&gt;): List Result Object</code></li>
 </ul>
 
 <h3 id="mutations">Mutations</h3>
@@ -2101,6 +2101,80 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <tr>
 <td>translation(language: &lsquo;en&rsquo;)</td>
 <td>A function which will return a translation object with <code class="prettyprint">translation</code> as an attribute. The only parameter is a language code.</td>
+</tr>
+</tbody></table>
+
+          <h2 id="list-result">List Result</h2>
+
+<p>This is a generic object that is used for any *getList query (for example, studentsGetList). </p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>count</td>
+<td>The total count of objects matching your filter</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Array of requested object type (ie. Student Objects)</td>
+</tr>
+</tbody></table>
+
+          <h1 id="inputs">Inputs</h1>
+
+          <h2 id="pagination">Pagination</h2>
+
+<p>This is the input used whenever there is pagination necessary on a *getList query.</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>The number of objects to limit the query by</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>The number of objects to offset the query by</td>
+</tr>
+</tbody></table>
+
+          <h2 id="student-get-list-filter">Student Get List Filter</h2>
+
+<p>This input is used to filter Student objects</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>agencyIds</td>
+<td>Array of agency Ids. Will match any students that belong to any of the agency Ids here</td>
+</tr>
+<tr>
+<td>ownerIds</td>
+<td>Array of user Ids. Will match any students that belong to any of the user Ids here</td>
+</tr>
+<tr>
+<td>nationalityIds</td>
+<td>Array of country Ids. Will match any students that belong to any of the country Ids here</td>
+</tr>
+<tr>
+<td>isDeleted</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>isArchived</td>
+<td>Boolean</td>
 </tr>
 </tbody></table>
 
