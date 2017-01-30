@@ -14,6 +14,7 @@ includes:
   - authentication
   - webhooks
   - objects
+  - objects/agency-company
   - objects/student
   - objects/student-course-preference
   - objects/student-location-preference
