@@ -50,5 +50,4 @@ promotionTypes[].details[].fees[].feeId |
 
 * `createPromotion(input: <body>)`
 * `updatePromotion(id: <id>, input: <body>)`
-* `upsertPromotion(input: <body>)`
 * `deletePromotion(id: <id>)`

@@ -49,5 +49,4 @@ studentQuoteOptions[].items[].description |
 
 * `createStudentQuote(input: <body>)`
 * `updateStudentQuote(id: <id>, input: <body>)`
-* `upsertStudentQuote(input: <body>)`
 * `deleteStudentQuote(id: <id>)`

@@ -56,5 +56,4 @@ startDates[].startDate |
 
 * `createAccommodation(input: <body>)`
 * `updateAccommodation(id: <id>, input: <body>)`
-* `upsertAccommodation(input: <body>)`
 * `deleteAccommodation(id: <id>)`

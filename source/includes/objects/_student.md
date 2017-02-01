@@ -44,11 +44,10 @@ customProperties[].value |
 
 * `student(studentId: <id>): Student Object`
 * `students(studentIds: [<ids>]): Array<Student Object>`
-* `studentsList(pagination: <Pagination Input>, filter: <Student List Filter Input>): List Result Object`
+* `studentsGetList(pagination: <Pagination Input>, filter: <Student List Filter Input>): List Result Object`
 
 ### Mutations
 
 * `studentCreate(input: <body>)`
 * `studentUpdate(id: <id>, input: <body>)`
-* `studentUpsert(input: <body>)`
 * `studentDelete(id: <id>)`

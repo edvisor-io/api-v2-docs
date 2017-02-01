@@ -37,5 +37,4 @@ fees | An array of Fee objects
 
 * `createSchool(input: <body>)`
 * `updateSchool(id: <id>, input: <body>)`
-* `upsertSchool(input: <body>)`
 * `deleteSchool(id: <id>)`

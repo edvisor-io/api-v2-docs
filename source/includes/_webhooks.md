@@ -14,6 +14,12 @@ Events subscribed: `student:create`, `student:update`
 
 What happens: When a student is updated or created, we will send a `POST https://api.your-agency.com/webhook/edvisor` request with a body containing the changes that represent the event.
 
+## Responding to a webhook
+
+To acknowledge receipt of a webhook, your endpoint should return a 2xx HTTP status code. Any other information returned in the request headers or request body is ignored. All response codes outside this range, including 3xx codes, will indicate to Edvisor.io that you did not receive the webhook. This does mean that a URL redirection or a "Not Modified" response will be treated as a failure.
+
+If a webhook is not successfully received for any reason, Edvisor.io will continue trying to send the webhook once an hour for up to 3 days. 
+
 ## Available events
 
 ### Student

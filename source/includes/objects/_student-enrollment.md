@@ -37,5 +37,4 @@ fields[].options[].selected |
 
 * `createStudentEnrollment(input: <body>)`
 * `updateStudentEnrollment(id: <id>, input: <body>)`
-* `upsertStudentEnrollment(input: <body>)`
 * `deleteStudentEnrollment(id: <id>)`

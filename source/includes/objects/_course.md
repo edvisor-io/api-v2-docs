@@ -65,5 +65,4 @@ startDates[].startDate |
 
 * `createCourse(input: <body>)`
 * `updateCourse(id: <id>, input: <body>)`
-* `upsertCourse(input: <body>)`
 * `deleteCourse(id: <id>)`

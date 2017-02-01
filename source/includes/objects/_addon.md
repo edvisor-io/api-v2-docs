@@ -44,5 +44,4 @@ fees[].prices[].rules[].logicalOperatorId | ie. AND / OR
 
 * `createAddon(input: <body>)`
 * `updateAddon(id: <id>, input: <body>)`
-* `upsertAddon(input: <body>)`
 * `deleteAddon(id: <id>)`
