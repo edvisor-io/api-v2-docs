@@ -219,6 +219,12 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 
 <p>What happens: When a student is updated or created, we will send a <code class="prettyprint">POST https://api.your-agency.com/webhook/edvisor</code> request with a body containing the changes that represent the event.</p>
 
+<h2 id="responding-to-a-webhook">Responding to a webhook</h2>
+
+<p>To acknowledge receipt of a webhook, your endpoint should return a 2xx HTTP status code. Any other information returned in the request headers or request body is ignored. All response codes outside this range, including 3xx codes, will indicate to Edvisor.io that you did not receive the webhook. This does mean that a URL redirection or a &ldquo;Not Modified&rdquo; response will be treated as a failure.</p>
+
+<p>If a webhook is not successfully received for any reason, Edvisor.io will continue trying to send the webhook once an hour for up to 3 days. </p>
+
 <h2 id="available-events">Available events</h2>
 
 <h3 id="student">Student</h3>
@@ -566,11 +572,18 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 </tbody></table>
 
 <h3 id="queries">Queries</h3>
+<pre class="highlight shell"><code><span class="c">#example of using studentsGetList</span>
 
+curl https://api.edvisor.io/graphql <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer MY_API_KEY"</span> <span class="se">\</span>
+  -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{"query":"query CustomQueryName($pagination: PaginationInput, $filter: StudentsFilterInput) {studentsGetList(pagination: $pagination, filter: $filter) {count, data {studentId}}}","variables":{"pagination":{"limit":10,"offset":0},"filter":{"isDeleted":false}}}'</span>
+</code></pre>
 <ul>
 <li><code class="prettyprint">student(studentId: &lt;id&gt;): Student Object</code></li>
 <li><code class="prettyprint">students(studentIds: [&lt;ids&gt;]): Array&lt;Student Object&gt;</code></li>
-<li><code class="prettyprint">studentsList(pagination: &lt;Pagination Input&gt;, filter: &lt;Student List Filter Input&gt;): List Result Object</code></li>
+<li><code class="prettyprint">studentsGetList(pagination: &lt;PaginationInput&gt;, filter: &lt;StudentsFilterInput&gt;): List Result Object</code></li>
 </ul>
 
 <h3 id="mutations">Mutations</h3>
@@ -578,7 +591,6 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <ul>
 <li><code class="prettyprint">studentCreate(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">studentUpdate(id: &lt;id&gt;, input: &lt;body&gt;)</code></li>
-<li><code class="prettyprint">studentUpsert(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">studentDelete(id: &lt;id&gt;)</code></li>
 </ul>
 
@@ -928,7 +940,6 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <ul>
 <li><code class="prettyprint">createSchool(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">updateSchool(id: &lt;id&gt;, input: &lt;body&gt;)</code></li>
-<li><code class="prettyprint">upsertSchool(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">deleteSchool(id: &lt;id&gt;)</code></li>
 </ul>
 
@@ -1218,7 +1229,6 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <ul>
 <li><code class="prettyprint">createStudentQuote(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">updateStudentQuote(id: &lt;id&gt;, input: &lt;body&gt;)</code></li>
-<li><code class="prettyprint">upsertStudentQuote(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">deleteStudentQuote(id: &lt;id&gt;)</code></li>
 </ul>
 
@@ -1456,7 +1466,6 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <ul>
 <li><code class="prettyprint">createCourse(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">updateCourse(id: &lt;id&gt;, input: &lt;body&gt;)</code></li>
-<li><code class="prettyprint">upsertCourse(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">deleteCourse(id: &lt;id&gt;)</code></li>
 </ul>
 
@@ -1658,7 +1667,6 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <ul>
 <li><code class="prettyprint">createAccommodation(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">updateAccommodation(id: &lt;id&gt;, input: &lt;body&gt;)</code></li>
-<li><code class="prettyprint">upsertAccommodation(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">deleteAccommodation(id: &lt;id&gt;)</code></li>
 </ul>
 
@@ -1812,7 +1820,6 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <ul>
 <li><code class="prettyprint">createAddon(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">updateAddon(id: &lt;id&gt;, input: &lt;body&gt;)</code></li>
-<li><code class="prettyprint">upsertAddon(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">deleteAddon(id: &lt;id&gt;)</code></li>
 </ul>
 
@@ -2040,7 +2047,6 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <ul>
 <li><code class="prettyprint">createPromotion(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">updatePromotion(id: &lt;id&gt;, input: &lt;body&gt;)</code></li>
-<li><code class="prettyprint">upsertPromotion(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">deletePromotion(id: &lt;id&gt;)</code></li>
 </ul>
 
@@ -2166,7 +2172,6 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <ul>
 <li><code class="prettyprint">createStudentEnrollment(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">updateStudentEnrollment(id: &lt;id&gt;, input: &lt;body&gt;)</code></li>
-<li><code class="prettyprint">upsertStudentEnrollment(input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">deleteStudentEnrollment(id: &lt;id&gt;)</code></li>
 </ul>
 
@@ -2230,9 +2235,9 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 
           <h1 id="inputs">Inputs</h1>
 
-          <h2 id="pagination">Pagination</h2>
+          <h2 id="paginationinput">PaginationInput</h2>
 
-<p>This is the input used whenever there is pagination necessary on a *getList query.</p>
+<p>This is the input used whenever there is pagination necessary on a *GetList query.</p>
 
 <table><thead>
 <tr>
@@ -2250,7 +2255,7 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 </tr>
 </tbody></table>
 
-          <h2 id="student-get-list-filter">Student Get List Filter</h2>
+          <h2 id="studentsfilterinput">StudentsFilterInput</h2>
 
 <p>This input is used to filter Student objects</p>
 
@@ -2284,36 +2289,29 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 
           <h1 id="errors">Errors</h1>
 
-<p>Edvisor.io uses the following error codes:</p>
+<p>Edvisor.io will respond with a 200 success code even if there are operational errors. This follows the GraphQL specification. All errors will be described in an <code class="prettyprint">errors</code> array in the response.</p>
+<pre class="highlight json"><code><span class="err">#Sample</span><span class="w"> </span><span class="err">error</span><span class="w"> </span><span class="err">response</span><span class="w">
 
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden &ndash; The object requested is not accessible by you</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
-</tr>
-</tbody></table>
-
+</span><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"agencyCompany"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unauthenticated"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"line"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"column"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"agencyCompany"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
       </div>
       <div class="dark-box">
       </div>
