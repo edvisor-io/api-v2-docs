@@ -42,9 +42,19 @@ customProperties[].value |
 
 ### Queries
 
+```shell
+#example of using studentsGetList
+
+curl https://api.edvisor.io/graphql \
+  -X POST \
+  -H "Authorization: Bearer MY_API_KEY" \
+  -H 'content-type: application/json' \
+  -d '{"query":"query CustomQueryName($pagination: PaginationInput, $filter: StudentsFilterInput) {studentsGetList(pagination: $pagination, filter: $filter) {count, data {studentId}}}","variables":{"pagination":{"limit":10,"offset":0},"filter":{"isDeleted":false}}}'
+```
+
 * `student(studentId: <id>): Student Object`
 * `students(studentIds: [<ids>]): Array<Student Object>`
-* `studentsGetList(pagination: <Pagination Input>, filter: <Student List Filter Input>): List Result Object`
+* `studentsGetList(pagination: <PaginationInput>, filter: <StudentsFilterInput>): List Result Object`
 
 ### Mutations
 

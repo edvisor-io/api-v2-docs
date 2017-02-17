@@ -1,4 +1,4 @@
-## Student Get List Filter
+## StudentsFilterInput
 
 This input is used to filter Student objects
 

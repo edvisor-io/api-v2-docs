@@ -1,6 +1,6 @@
-## Pagination
+## PaginationInput
 
-This is the input used whenever there is pagination necessary on a *getList query.
+This is the input used whenever there is pagination necessary on a *GetList query.
 
 Attribute | Description
 --- | ---
