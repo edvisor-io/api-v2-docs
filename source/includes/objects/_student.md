@@ -2,17 +2,18 @@
 
 Attribute | Description
 --- | ---
-studentId  | 
+studentId | 
 ownerId | The ID of the staff member assigned to this student
 agencyId | The ID of the agency office that this student belongs to
 nationalityId | The ID of the country representing the student’s nationality
+photoId | 
 firstname | 
 lastname | 
 email | 
 phone | 
 address | 
 postalCode | 
-gender | M / F
+gender | 
 birthdate | 
 passportNumber | 
 notes | 
@@ -24,20 +25,34 @@ startDay |
 durationWeekAmount | The number of weeks the student would prefer to study for
 hoursPerWeek | 
 amOrPm | 
+created | 
+modified | 
+currentLocationGooglePlaceId | 
 isHighPriority | 
 isArchived | 
+isDeleted | 
+studentArchiveReasonId | 
 archiveNotes | 
 archiveDate | 
-studentSecondaryContacts | An array of Student Secondary Contact objects
-studentCoursePreferences | An array of Student Course Preference objects
-studentLocationPreferences | An array of Student Location Preference objects
-studentSchoolPreferences | An array of Student School Preferences objects
-studentStudyRecords | An array of Student Study Record objects
-studentTags | An array of Student Tag objects
-customProperties | An array of custom properties that can be stored with the student. The custom properties can be configured at the agency office level.
-customProperties[].customPropertyId | 
-customProperties[].label | 
-customProperties[].value | 
+startDate | 
+recoveryDate | 
+studentTags | Array&lt;[StudentTag](#student-tag)&gt;
+studentCoursePreferences | Array&lt;[StudentCoursePreference](#student-course-preference)&gt;
+studentSchoolPreferences | Array&lt;[StudentSchoolPreference](#student-school-preference)&gt;
+studentLocationPreferences | Array&lt;[StudentLocationPreference](#student-location-preference)&gt;
+studentCurrentPipelineStages | Array&lt;[StudentCurrentPipelineStage](#student-current-pipeline-stage)&gt;
+studentPipelineStageStepCompleted | Array&lt;[StudentPipelineStageStepCompleted](#student-pipeline-stage-step-completed)&gt;
+customPropertyValues | Array&lt;[CustomPropertyValue](#custom-property-value)&gt;
+studentSecondaryContacts | Array&lt;[StudentSecondaryContact](#student-secondary-contact)&gt;
+studentStudyRecords | Array&lt;[StudentStudyRecord](#student-study-record)&gt;
+quotes | Array&lt;[Quote](#quote)&gt;
+studentQuotes | Array&lt;[StudentQuote](#student-quote)&gt;
+owner | [User](#user)
+currentLocationGooglePlace | [GooglePlace](#google-place)
+nationality | [Country](#country)
+files | Array&lt;[File](#file)&gt;
+studentEnrollments | Array&lt;[StudentEnrollment](#student-enrollment)&gt;
+photo | [Photo](#photo)
 
 
 ### Queries
@@ -52,12 +67,19 @@ curl https://api.edvisor.io/graphql \
   -d '{"query":"query CustomQueryName($pagination: PaginationInput, $filter: StudentsFilterInput) {studentsGetList(pagination: $pagination, filter: $filter) {count, data {studentId}}}","variables":{"pagination":{"limit":10,"offset":0},"filter":{"isDeleted":false}}}'
 ```
 
-* `student(studentId: <id>): Student Object`
-* `students(studentIds: [<ids>]): Array<Student Object>`
-* `studentsGetList(pagination: <PaginationInput>, filter: <StudentsFilterInput>): List Result Object`
+Query | Return object
+--- | ---
+student(studentId: &lt;Int&gt;) | [Student](#student)
+students(studentIds: Array&lt;Int&gt;) | Array&lt;[Student](#student)&gt;
+studentsGetList(pagination: &lt;PaginationInput&gt;, filter: &lt;StudentsFilterInput&gt;) | [ListResult](#list-result)
 
 ### Mutations
 
-* `studentCreate(input: <body>)`
-* `studentUpdate(id: <id>, input: <body>)`
-* `studentDelete(id: <id>)`
+Mutation | Return object
+--- | ---
+createStudent(input: &lt;StudentInput&gt;) | [Student](#student)
+createWeb2LeadStudent(input: &lt;StudentInput&gt;) | [Student](#student)
+updateStudent(studentId: &lt;Int&gt;, input: &lt;StudentInput&gt;) | [Student](#student)
+deleteStudents(studentIds: Array&lt;Int&gt;) | [Student](#student)
+uploadStudentFiles(studentId: &lt;Int&gt;, fieldName: &lt;String&gt;) | [File](#file)
+uploadStudentPhoto(studentId: &lt;Int&gt;, fieldName: &lt;String&gt;) | [File](#file)

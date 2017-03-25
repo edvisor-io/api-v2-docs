@@ -15,9 +15,14 @@ includes:
   - webhooks
   - objects
   - objects/agency-company
+  - objects/custom-property-value
+  - objects/quote
+  - objects/quote-status
   - objects/student
   - objects/student-course-preference
+  - objects/student-current-pipeline-stage
   - objects/student-location-preference
+  - objects/student-pipeline-stage-step-completed
   - objects/student-school-preference
   - objects/student-secondary-contact
   - objects/student-study-record
@@ -26,6 +31,7 @@ includes:
   - objects/school
   - objects/course-search-result
   - objects/student-quote
+  - objects/student-quote-status
   - objects/course
   - objects/accommodation
   - objects/addon
@@ -33,6 +39,10 @@ includes:
   - objects/promotion
   - objects/student-enrollment
   - objects/country
+  - objects/user
+  - objects/google-place
+  - objects/file
+  - objects/photo
   - objects/list-result
   - inputs
   - inputs/pagination
