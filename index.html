@@ -207,9 +207,15 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 
 <h2 id="introduction">Introduction</h2>
 
-<p>In addition to the available GraphQL API, Edvisor.io can register webhooks so you can synchronise the data in your agency account with an external service or system. When registering a webhook, you’re able to subscribe to specific events so that you only receive the events (synchronize the data) that you want. </p>
+<p>In addition to the available GraphQL API, Edvisor.io can register webhooks so you can 
+synchronise the data in your agency account with an external service or system. When 
+registering a webhook, you’re able to subscribe to specific events so that you only 
+receive the events (synchronize the data) that you want. </p>
 
-<p>For example, if you’d like keep the student information in your external CRM up-to-date with changes made to students in your Edvisor.io account, you can register a webhook that subscribes to the “student:update” event.  When a student is updated on Edvisor.io, we will then send the updated information to a pre-set URL.</p>
+<p>For example, if you’d like keep the student information in your external CRM up-to-date with 
+changes made to students in your Edvisor.io account, you can register a webhook that 
+subscribes to the “student:update” event.  When a student is updated on Edvisor.io, we will 
+then send the updated information to a pre-set URL.</p>
 
 <p>Sample Webhook:</p>
 
@@ -221,9 +227,14 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 
 <h2 id="responding-to-a-webhook">Responding to a webhook</h2>
 
-<p>To acknowledge receipt of a webhook, your endpoint should return a 2xx HTTP status code. Any other information returned in the request headers or request body is ignored. All response codes outside this range, including 3xx codes, will indicate to Edvisor.io that you did not receive the webhook. This does mean that a URL redirection or a &ldquo;Not Modified&rdquo; response will be treated as a failure.</p>
+<p>To acknowledge receipt of a webhook, your endpoint should return a 2xx HTTP status code. Any 
+other information returned in the request headers or request body is ignored. All response 
+codes outside this range, including 3xx codes, will indicate to Edvisor.io that you did not 
+receive the webhook. This does mean that a URL redirection or a &ldquo;Not Modified&rdquo; response will 
+be treated as a failure.</p>
 
-<p>If a webhook is not successfully received for any reason, Edvisor.io will continue trying to send the webhook once an hour for up to 3 days. </p>
+<p>If a webhook is not successfully received for any reason, Edvisor.io will continue trying 
+to send the webhook once every 15 minutes for up to 3 days. </p>
 
 <h2 id="available-events">Available events</h2>
 
@@ -279,6 +290,30 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 
 <p>The event object that is sent along with the webhook request will be structured like the following:</p>
 
+<blockquote>
+<p>Sample Event object:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-31T19:12:43.687Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Garcia"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.garcia@education-agency.com"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"student:update"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"after"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"studentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"frank@email.com"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"before"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"studentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <table><thead>
 <tr>
 <th>Attribute</th>
@@ -286,27 +321,43 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 </tr>
 </thead><tbody>
 <tr>
-<td>object</td>
-<td>String value <code class="prettyprint">event</code></td>
+<td>created</td>
+<td>Timestamp of when this event occured</td>
+</tr>
+<tr>
+<td>user</td>
+<td>Information regarding the creator of this event</td>
+</tr>
+<tr>
+<td>user.userId</td>
+<td></td>
+</tr>
+<tr>
+<td>user.firstname</td>
+<td></td>
+</tr>
+<tr>
+<td>user.lastname</td>
+<td></td>
+</tr>
+<tr>
+<td>user.email</td>
+<td></td>
 </tr>
 <tr>
 <td>type</td>
 <td>Event name (ie. <code class="prettyprint">student:create</code>)</td>
 </tr>
 <tr>
-<td>created</td>
-<td></td>
-</tr>
-<tr>
 <td>data</td>
 <td></td>
 </tr>
 <tr>
-<td>data.object</td>
+<td>data.after</td>
 <td>The object affected AFTER the event has taken place</td>
 </tr>
 <tr>
-<td>data.previousObject</td>
+<td>data.before</td>
 <td>the object BEFORE the event took place</td>
 </tr>
 </tbody></table>
@@ -417,6 +468,128 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <li><code class="prettyprint">agencyCompany</code></li>
 </ul>
 
+          <h2 id="custom-property-value">Custom Property Value</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>customPropertyValueId</td>
+<td></td>
+</tr>
+<tr>
+<td>studentId</td>
+<td></td>
+</tr>
+<tr>
+<td>customPropertyId</td>
+<td></td>
+</tr>
+<tr>
+<td>customPropertyFieldId</td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td></td>
+</tr>
+<tr>
+<td>created</td>
+<td></td>
+</tr>
+<tr>
+<td>modified</td>
+<td></td>
+</tr>
+</tbody></table>
+
+          <h2 id="quote">Quote</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>quoteId</td>
+<td></td>
+</tr>
+<tr>
+<td>studentId</td>
+<td></td>
+</tr>
+<tr>
+<td>quoteStatusId</td>
+<td></td>
+</tr>
+<tr>
+<td>expires</td>
+<td></td>
+</tr>
+<tr>
+<td>issued</td>
+<td></td>
+</tr>
+<tr>
+<td>created</td>
+<td></td>
+</tr>
+<tr>
+<td>modified</td>
+<td></td>
+</tr>
+<tr>
+<td>viewed</td>
+<td></td>
+</tr>
+<tr>
+<td>decisionMade</td>
+<td></td>
+</tr>
+<tr>
+<td>languageId</td>
+<td></td>
+</tr>
+<tr>
+<td>paymentCurrencyId</td>
+<td></td>
+</tr>
+<tr>
+<td>notes</td>
+<td></td>
+</tr>
+<tr>
+<td>obscuredId</td>
+<td></td>
+</tr>
+<tr>
+<td>quoteStatus</td>
+<td><a href="#quote-status">QuoteStatus</a></td>
+</tr>
+</tbody></table>
+
+          <h2 id="quote-status">Quote Status</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>quoteStatusId</td>
+<td></td>
+</tr>
+<tr>
+<td>codeName</td>
+<td></td>
+</tr>
+</tbody></table>
+
           <h2 id="student">Student</h2>
 
 <table><thead>
@@ -440,6 +613,10 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <tr>
 <td>nationalityId</td>
 <td>The ID of the country representing the student’s nationality</td>
+</tr>
+<tr>
+<td>photoId</td>
+<td></td>
 </tr>
 <tr>
 <td>firstname</td>
@@ -467,7 +644,7 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 </tr>
 <tr>
 <td>gender</td>
-<td>M / F</td>
+<td></td>
 </tr>
 <tr>
 <td>birthdate</td>
@@ -514,11 +691,31 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <td></td>
 </tr>
 <tr>
+<td>created</td>
+<td></td>
+</tr>
+<tr>
+<td>modified</td>
+<td></td>
+</tr>
+<tr>
+<td>currentLocationGooglePlaceId</td>
+<td></td>
+</tr>
+<tr>
 <td>isHighPriority</td>
 <td></td>
 </tr>
 <tr>
 <td>isArchived</td>
+<td></td>
+</tr>
+<tr>
+<td>isDeleted</td>
+<td></td>
+</tr>
+<tr>
+<td>studentArchiveReasonId</td>
 <td></td>
 </tr>
 <tr>
@@ -530,44 +727,80 @@ It is your responsibility to not expose your Edvisor.io API key to the public. A
 <td></td>
 </tr>
 <tr>
-<td>studentSecondaryContacts</td>
-<td>An array of Student Secondary Contact objects</td>
+<td>startDate</td>
+<td></td>
 </tr>
 <tr>
-<td>studentCoursePreferences</td>
-<td>An array of Student Course Preference objects</td>
-</tr>
-<tr>
-<td>studentLocationPreferences</td>
-<td>An array of Student Location Preference objects</td>
-</tr>
-<tr>
-<td>studentSchoolPreferences</td>
-<td>An array of Student School Preferences objects</td>
-</tr>
-<tr>
-<td>studentStudyRecords</td>
-<td>An array of Student Study Record objects</td>
+<td>recoveryDate</td>
+<td></td>
 </tr>
 <tr>
 <td>studentTags</td>
-<td>An array of Student Tag objects</td>
+<td>Array&lt;<a href="#student-tag">StudentTag</a>&gt;</td>
 </tr>
 <tr>
-<td>customProperties</td>
-<td>An array of custom properties that can be stored with the student. The custom properties can be configured at the agency office level.</td>
+<td>studentCoursePreferences</td>
+<td>Array&lt;<a href="#student-course-preference">StudentCoursePreference</a>&gt;</td>
 </tr>
 <tr>
-<td>customProperties[].customPropertyId</td>
-<td></td>
+<td>studentSchoolPreferences</td>
+<td>Array&lt;<a href="#student-school-preference">StudentSchoolPreference</a>&gt;</td>
 </tr>
 <tr>
-<td>customProperties[].label</td>
-<td></td>
+<td>studentLocationPreferences</td>
+<td>Array&lt;<a href="#student-location-preference">StudentLocationPreference</a>&gt;</td>
 </tr>
 <tr>
-<td>customProperties[].value</td>
-<td></td>
+<td>studentCurrentPipelineStages</td>
+<td>Array&lt;<a href="#student-current-pipeline-stage">StudentCurrentPipelineStage</a>&gt;</td>
+</tr>
+<tr>
+<td>studentPipelineStageStepCompleted</td>
+<td>Array&lt;<a href="#student-pipeline-stage-step-completed">StudentPipelineStageStepCompleted</a>&gt;</td>
+</tr>
+<tr>
+<td>customPropertyValues</td>
+<td>Array&lt;<a href="#custom-property-value">CustomPropertyValue</a>&gt;</td>
+</tr>
+<tr>
+<td>studentSecondaryContacts</td>
+<td>Array&lt;<a href="#student-secondary-contact">StudentSecondaryContact</a>&gt;</td>
+</tr>
+<tr>
+<td>studentStudyRecords</td>
+<td>Array&lt;<a href="#student-study-record">StudentStudyRecord</a>&gt;</td>
+</tr>
+<tr>
+<td>quotes</td>
+<td>Array&lt;<a href="#quote">Quote</a>&gt;</td>
+</tr>
+<tr>
+<td>studentQuotes</td>
+<td>Array&lt;<a href="#student-quote">StudentQuote</a>&gt;</td>
+</tr>
+<tr>
+<td>owner</td>
+<td><a href="#user">User</a></td>
+</tr>
+<tr>
+<td>currentLocationGooglePlace</td>
+<td><a href="#google-place">GooglePlace</a></td>
+</tr>
+<tr>
+<td>nationality</td>
+<td><a href="#country">Country</a></td>
+</tr>
+<tr>
+<td>files</td>
+<td>Array&lt;<a href="#file">File</a>&gt;</td>
+</tr>
+<tr>
+<td>studentEnrollments</td>
+<td>Array&lt;<a href="#student-enrollment">StudentEnrollment</a>&gt;</td>
+</tr>
+<tr>
+<td>photo</td>
+<td><a href="#photo">Photo</a></td>
 </tr>
 </tbody></table>
 
@@ -580,19 +813,59 @@ curl https://api.edvisor.io/graphql <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   -d <span class="s1">'{"query":"query CustomQueryName($pagination: PaginationInput, $filter: StudentsFilterInput) {studentsGetList(pagination: $pagination, filter: $filter) {count, data {studentId}}}","variables":{"pagination":{"limit":10,"offset":0},"filter":{"isDeleted":false}}}'</span>
 </code></pre>
-<ul>
-<li><code class="prettyprint">student(studentId: &lt;id&gt;): Student Object</code></li>
-<li><code class="prettyprint">students(studentIds: [&lt;ids&gt;]): Array&lt;Student Object&gt;</code></li>
-<li><code class="prettyprint">studentsGetList(pagination: &lt;PaginationInput&gt;, filter: &lt;StudentsFilterInput&gt;): List Result Object</code></li>
-</ul>
+<table><thead>
+<tr>
+<th>Query</th>
+<th>Return object</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>student(studentId: &lt;Int&gt;)</td>
+<td><a href="#student">Student</a></td>
+</tr>
+<tr>
+<td>students(studentIds: Array&lt;Int&gt;)</td>
+<td>Array&lt;<a href="#student">Student</a>&gt;</td>
+</tr>
+<tr>
+<td>studentsGetList(pagination: &lt;PaginationInput&gt;, filter: &lt;StudentsFilterInput&gt;)</td>
+<td><a href="#list-result">ListResult</a></td>
+</tr>
+</tbody></table>
 
 <h3 id="mutations">Mutations</h3>
 
-<ul>
-<li><code class="prettyprint">studentCreate(input: &lt;body&gt;)</code></li>
-<li><code class="prettyprint">studentUpdate(id: &lt;id&gt;, input: &lt;body&gt;)</code></li>
-<li><code class="prettyprint">studentDelete(id: &lt;id&gt;)</code></li>
-</ul>
+<table><thead>
+<tr>
+<th>Mutation</th>
+<th>Return object</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>createStudent(input: &lt;StudentInput&gt;)</td>
+<td><a href="#student">Student</a></td>
+</tr>
+<tr>
+<td>createWeb2LeadStudent(input: &lt;StudentInput&gt;)</td>
+<td><a href="#student">Student</a></td>
+</tr>
+<tr>
+<td>updateStudent(studentId: &lt;Int&gt;, input: &lt;StudentInput&gt;)</td>
+<td><a href="#student">Student</a></td>
+</tr>
+<tr>
+<td>deleteStudents(studentIds: Array&lt;Int&gt;)</td>
+<td><a href="#student">Student</a></td>
+</tr>
+<tr>
+<td>uploadStudentFiles(studentId: &lt;Int&gt;, fieldName: &lt;String&gt;)</td>
+<td><a href="#file">File</a></td>
+</tr>
+<tr>
+<td>uploadStudentPhoto(studentId: &lt;Int&gt;, fieldName: &lt;String&gt;)</td>
+<td><a href="#file">File</a></td>
+</tr>
+</tbody></table>
 
           <h2 id="student-course-preference">Student Course Preference</h2>
 
@@ -616,6 +889,36 @@ curl https://api.edvisor.io/graphql <span class="se">\</span>
 </tr>
 </tbody></table>
 
+          <h2 id="student-current-pipeline-stage">Student Current Pipeline Stage</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>studentCurrentPipelineStageId</td>
+<td></td>
+</tr>
+<tr>
+<td>studentId</td>
+<td></td>
+</tr>
+<tr>
+<td>studentPipelineStageId</td>
+<td></td>
+</tr>
+<tr>
+<td>created</td>
+<td></td>
+</tr>
+<tr>
+<td>modified</td>
+<td></td>
+</tr>
+</tbody></table>
+
           <h2 id="student-location-preference">Student Location Preference</h2>
 
 <table><thead>
@@ -634,6 +937,36 @@ curl https://api.edvisor.io/graphql <span class="se">\</span>
 </tr>
 <tr>
 <td>googlePlaceId</td>
+<td></td>
+</tr>
+</tbody></table>
+
+          <h2 id="student-pipeline-stage-step-completed">Student Pipeline Stage Step Completed</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>studentPipelineStageStepCompletedId</td>
+<td></td>
+</tr>
+<tr>
+<td>studentPipelineStageStepId</td>
+<td></td>
+</tr>
+<tr>
+<td>studentId</td>
+<td></td>
+</tr>
+<tr>
+<td>created</td>
+<td></td>
+</tr>
+<tr>
+<td>modified</td>
 <td></td>
 </tr>
 </tbody></table>
@@ -1231,6 +1564,24 @@ curl https://api.edvisor.io/graphql <span class="se">\</span>
 <li><code class="prettyprint">updateStudentQuote(id: &lt;id&gt;, input: &lt;body&gt;)</code></li>
 <li><code class="prettyprint">deleteStudentQuote(id: &lt;id&gt;)</code></li>
 </ul>
+
+          <h2 id="student-quote-status">Student Quote Status</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>studentQuoteStatusId</td>
+<td></td>
+</tr>
+<tr>
+<td>codeName</td>
+<td></td>
+</tr>
+</tbody></table>
 
           <h2 id="course">Course</h2>
 
@@ -2208,8 +2559,204 @@ curl https://api.edvisor.io/graphql <span class="se">\</span>
 <td></td>
 </tr>
 <tr>
-<td>translation(language: &lsquo;en&rsquo;)</td>
-<td>A function which will return a translation object with <code class="prettyprint">translation</code> as an attribute. The only parameter is a language code.</td>
+<td>nameTranslation(languageCode: &lt;String&gt;, languageId: &lt;Int&gt;)</td>
+<td>Returns the translation in the specified language. Only the languageCode OR languageId needs to be specified.</td>
+</tr>
+</tbody></table>
+
+          <h2 id="user">User</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td></td>
+</tr>
+<tr>
+<td>firstname</td>
+<td></td>
+</tr>
+<tr>
+<td>lastname</td>
+<td></td>
+</tr>
+<tr>
+<td>phone</td>
+<td></td>
+</tr>
+<tr>
+<td>skype</td>
+<td></td>
+</tr>
+<tr>
+<td>lastLoggedInDate</td>
+<td></td>
+</tr>
+<tr>
+<td>lastLoggedInIp</td>
+<td></td>
+</tr>
+<tr>
+<td>active</td>
+<td></td>
+</tr>
+<tr>
+<td>languageId</td>
+<td></td>
+</tr>
+<tr>
+<td>markNewDays</td>
+<td></td>
+</tr>
+<tr>
+<td>archiveAfterDays</td>
+<td></td>
+</tr>
+<tr>
+<td>emailTaskNotification</td>
+<td></td>
+</tr>
+<tr>
+<td>photoId</td>
+<td></td>
+</tr>
+<tr>
+<td>userRoleTypeId</td>
+<td></td>
+</tr>
+<tr>
+<td>created</td>
+<td></td>
+</tr>
+<tr>
+<td>modified</td>
+<td></td>
+</tr>
+<tr>
+<td>photo</td>
+<td><a href="#photo">Photo</a></td>
+</tr>
+</tbody></table>
+
+          <h2 id="google-place">Google Place</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>googlePlaceId</td>
+<td></td>
+</tr>
+<tr>
+<td>countryId</td>
+<td></td>
+</tr>
+<tr>
+<td>translationId</td>
+<td></td>
+</tr>
+<tr>
+<td>translation(languageCode: &lt;String&gt;, languageId: &lt;Int&gt;)</td>
+<td>Returns the translation in the specified language. Only the languageCode OR languageId needs to be specified.</td>
+</tr>
+</tbody></table>
+
+          <h2 id="file">File</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fileId</td>
+<td></td>
+</tr>
+<tr>
+<td>uploaderUserId</td>
+<td></td>
+</tr>
+<tr>
+<td>mimeType</td>
+<td></td>
+</tr>
+<tr>
+<td>fileExtension</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td></td>
+</tr>
+<tr>
+<td>path</td>
+<td></td>
+</tr>
+<tr>
+<td>url</td>
+<td></td>
+</tr>
+<tr>
+<td>created</td>
+<td></td>
+</tr>
+<tr>
+<td>modified</td>
+<td></td>
+</tr>
+</tbody></table>
+
+          <h2 id="photo">Photo</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>photoId</td>
+<td></td>
+</tr>
+<tr>
+<td>captionTranslationId</td>
+<td></td>
+</tr>
+<tr>
+<td>uploaderUserId</td>
+<td></td>
+</tr>
+<tr>
+<td>mimeType</td>
+<td></td>
+</tr>
+<tr>
+<td>fileExtension</td>
+<td></td>
+</tr>
+<tr>
+<td>path</td>
+<td></td>
+</tr>
+<tr>
+<td>url</td>
+<td></td>
+</tr>
+<tr>
+<td>created</td>
+<td></td>
 </tr>
 </tbody></table>
 
