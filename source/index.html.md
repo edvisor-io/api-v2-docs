@@ -44,9 +44,16 @@ includes:
   - objects/file
   - objects/photo
   - objects/list-result
+  - objects/course-search-result
+  - objects/offering
+  - objects/duration-type
+  - objects/offering-course-category
   - inputs
   - inputs/pagination
+  - inputs/date-range
+  - inputs/integer-range
   - inputs/student-get-list-filter
+  - inputs/course-search-filter
   - errors
 
 search: true

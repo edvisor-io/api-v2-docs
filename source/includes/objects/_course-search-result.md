@@ -4,31 +4,24 @@ Attribute | Description
 --- | ---
 offeringId | 
 name | 
-schoolId | 
-school | The School object
-intensityAmount | 
-intensityAmountDurationType | The Duration Type object
-intensityPerDurationType | The Duration Type object
-enrollmentOptions | An array of enrollment options
-enrollmentOptions[].durationAmount | 
-enrollmentOptions[].durationType | 
-enrollmentOptions[].price | 
-enrollmentOptions[].currency | 
-enrollmentOptions[].promotion | The promotion object
-enrollmentOptions[].promotion.name | 
-enrollmentOptions[].promotion.descriptions | An array of descriptions for the promotion
-enrollmentOptions[].promotion.descriptions[].language | 
-enrollmentOptions[].promotion.descriptions[].description | 
-enrollmentOptions[].promotion.bookFrom | 
-enrollmentOptions[].promotion.bookTo | 
-enrollmentOptions[].promotion.studyFrom | 
-enrollmentOptions[].promotion.studyTo | 
-enrollmentOptions[].promotion.eligibleNationalities | An array of nationalities eligible for this promotion
-enrollmentOptions[].promotion.discounts | An array of discounts to describe the promotion
-enrollmentOptions[].promotion.discounts[].label | 
-enrollmentOptions[].promotion.discounts[].amount | 
-enrollmentOptions[].promotion.discounts[].isPercentage | 
+durationAmount | 
+durationTypeId | 
+startDate | 
+durationType | [DurationType](#duration-type)
+offering | [Offering](#offering)
 
 ### Queries
 
-* `courseSearch(filter: <body>)`
+```shell
+#example of using coursesGetList
+
+curl https://api.edvisor.io/graphql \
+  -X POST \
+  -H "Authorization: Bearer MY_API_KEY" \
+  -H 'content-type: application/json' \
+  -d '{"query":"query CustomQueryName($pagination: PaginationInput, $filter: CourseSearchFilter) {coursesGetList(pagination: $pagination, filter: $filter) {count, data {offeringId}}}","variables":{"pagination":{"limit":10,"offset":0},"filter":{"age":{"eq":18}}}}'
+```
+
+Query | Return object
+--- | ---
+coursesGetList(pagination: &lt;PaginationInput&gt;, filter: [&lt;CourseSearchFilter&gt;](#course-search-filter)) | [ListResult](#list-result)
