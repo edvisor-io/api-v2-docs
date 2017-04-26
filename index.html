@@ -1293,108 +1293,47 @@ curl https://api.edvisor.io/graphql <span class="se">\</span>
 <td></td>
 </tr>
 <tr>
-<td>schoolId</td>
+<td>durationAmount</td>
 <td></td>
 </tr>
 <tr>
-<td>school</td>
-<td>The School object</td>
-</tr>
-<tr>
-<td>intensityAmount</td>
+<td>durationTypeId</td>
 <td></td>
 </tr>
 <tr>
-<td>intensityAmountDurationType</td>
-<td>The Duration Type object</td>
-</tr>
-<tr>
-<td>intensityPerDurationType</td>
-<td>The Duration Type object</td>
-</tr>
-<tr>
-<td>enrollmentOptions</td>
-<td>An array of enrollment options</td>
-</tr>
-<tr>
-<td>enrollmentOptions[].durationAmount</td>
+<td>startDate</td>
 <td></td>
 </tr>
 <tr>
-<td>enrollmentOptions[].durationType</td>
-<td></td>
+<td>durationType</td>
+<td><a href="#duration-type">DurationType</a></td>
 </tr>
 <tr>
-<td>enrollmentOptions[].price</td>
-<td></td>
-</tr>
-<tr>
-<td>enrollmentOptions[].currency</td>
-<td></td>
-</tr>
-<tr>
-<td>enrollmentOptions[].promotion</td>
-<td>The promotion object</td>
-</tr>
-<tr>
-<td>enrollmentOptions[].promotion.name</td>
-<td></td>
-</tr>
-<tr>
-<td>enrollmentOptions[].promotion.descriptions</td>
-<td>An array of descriptions for the promotion</td>
-</tr>
-<tr>
-<td>enrollmentOptions[].promotion.descriptions[].language</td>
-<td></td>
-</tr>
-<tr>
-<td>enrollmentOptions[].promotion.descriptions[].description</td>
-<td></td>
-</tr>
-<tr>
-<td>enrollmentOptions[].promotion.bookFrom</td>
-<td></td>
-</tr>
-<tr>
-<td>enrollmentOptions[].promotion.bookTo</td>
-<td></td>
-</tr>
-<tr>
-<td>enrollmentOptions[].promotion.studyFrom</td>
-<td></td>
-</tr>
-<tr>
-<td>enrollmentOptions[].promotion.studyTo</td>
-<td></td>
-</tr>
-<tr>
-<td>enrollmentOptions[].promotion.eligibleNationalities</td>
-<td>An array of nationalities eligible for this promotion</td>
-</tr>
-<tr>
-<td>enrollmentOptions[].promotion.discounts</td>
-<td>An array of discounts to describe the promotion</td>
-</tr>
-<tr>
-<td>enrollmentOptions[].promotion.discounts[].label</td>
-<td></td>
-</tr>
-<tr>
-<td>enrollmentOptions[].promotion.discounts[].amount</td>
-<td></td>
-</tr>
-<tr>
-<td>enrollmentOptions[].promotion.discounts[].isPercentage</td>
-<td></td>
+<td>offering</td>
+<td><a href="#offering">Offering</a></td>
 </tr>
 </tbody></table>
 
 <h3 id="queries">Queries</h3>
+<pre class="highlight shell"><code><span class="c">#example of using coursesGetList</span>
 
-<ul>
-<li><code class="prettyprint">courseSearch(filter: &lt;body&gt;)</code></li>
-</ul>
+curl https://api.edvisor.io/graphql <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer MY_API_KEY"</span> <span class="se">\</span>
+  -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{"query":"query CustomQueryName($pagination: PaginationInput, $filter: CourseSearchFilter) {coursesGetList(pagination: $pagination, filter: $filter) {count, data {offeringId}}}","variables":{"pagination":{"limit":10,"offset":0},"filter":{"age":{"eq":18}}}}'</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Query</th>
+<th>Return object</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coursesGetList(pagination: &lt;PaginationInput&gt;, filter: <a href="#course-search-filter">&lt;CourseSearchFilter&gt;</a>)</td>
+<td><a href="#list-result">ListResult</a></td>
+</tr>
+</tbody></table>
 
           <h2 id="student-quote">Student Quote</h2>
 
@@ -1596,39 +1535,7 @@ curl https://api.edvisor.io/graphql <span class="se">\</span>
 <td></td>
 </tr>
 <tr>
-<td>schoolId</td>
-<td>The campus the course belongs to</td>
-</tr>
-<tr>
-<td>reqMinDurationAmount</td>
-<td></td>
-</tr>
-<tr>
-<td>reqMinDurationTypeId</td>
-<td></td>
-</tr>
-<tr>
-<td>reqMaxDurationAmount</td>
-<td></td>
-</tr>
-<tr>
-<td>reqMaxDurationTypeId</td>
-<td></td>
-</tr>
-<tr>
-<td>reqMinAge</td>
-<td></td>
-</tr>
-<tr>
-<td>reqMaxAge</td>
-<td></td>
-</tr>
-<tr>
-<td>availabilityStart</td>
-<td></td>
-</tr>
-<tr>
-<td>availabilityEnd</td>
+<td>offeringCourseCategoryId</td>
 <td></td>
 </tr>
 <tr>
@@ -1636,7 +1543,15 @@ curl https://api.edvisor.io/graphql <span class="se">\</span>
 <td></td>
 </tr>
 <tr>
-<td>offeringCourseCategoryId</td>
+<td>offeringPriceTemplateId</td>
+<td></td>
+</tr>
+<tr>
+<td>offeringTimetableTemplateId</td>
+<td></td>
+</tr>
+<tr>
+<td>offeringStartDateTemplateId</td>
 <td></td>
 </tr>
 <tr>
@@ -1644,181 +1559,10 @@ curl https://api.edvisor.io/graphql <span class="se">\</span>
 <td></td>
 </tr>
 <tr>
-<td>descriptions[]</td>
-<td>Array of descriptions in different languages</td>
-</tr>
-<tr>
-<td>descriptions[].languageId</td>
-<td></td>
-</tr>
-<tr>
-<td>descriptions[].description</td>
-<td></td>
-</tr>
-<tr>
-<td>prices[]</td>
-<td>Array of pricing rules associated with the course</td>
-</tr>
-<tr>
-<td>prices[].startDate</td>
-<td></td>
-</tr>
-<tr>
-<td>prices[].endDate</td>
-<td></td>
-</tr>
-<tr>
-<td>prices[].minDuration</td>
-<td></td>
-</tr>
-<tr>
-<td>prices[].maxDuration</td>
-<td></td>
-</tr>
-<tr>
-<td>prices[].durationTypeId</td>
-<td></td>
-</tr>
-<tr>
-<td>prices[].amount</td>
-<td></td>
-</tr>
-<tr>
-<td>prices[].isAmountPerDuration</td>
-<td></td>
-</tr>
-<tr>
-<td>pricingIsTiered</td>
-<td>Whether to use tiered pricing with the price rules</td>
-</tr>
-<tr>
-<td>fees[]</td>
-<td>Array of fees associated with the course</td>
-</tr>
-<tr>
-<td>fees[].name</td>
-<td></td>
-</tr>
-<tr>
-<td>fees[].prices[]</td>
-<td>Array of pricing rules for the fees</td>
-</tr>
-<tr>
-<td>fees[].prices[].amount</td>
-<td></td>
-</tr>
-<tr>
-<td>fees[].prices[].isRepeating</td>
-<td>Allows the fees to repeat</td>
-</tr>
-<tr>
-<td>fees[].prices[].repeatDurationAmount</td>
-<td></td>
-</tr>
-<tr>
-<td>fees[].prices[].repeatDurationTypeId</td>
-<td></td>
-</tr>
-<tr>
-<td>fees[].prices[].rules[]</td>
-<td>Rules that configure how the pricing should be applied</td>
-</tr>
-<tr>
-<td>fees[].prices[].rules[].priceRuleTypeId</td>
-<td>ie. Study duration, Valid time period, Student Age, or Booking date</td>
-</tr>
-<tr>
-<td>fees[].prices[].rules[].comparisonTypeId</td>
-<td>ie. Equal, Not equal, Greater than, Less than, etc..</td>
-</tr>
-<tr>
-<td>fees[].prices[].rules[].value</td>
-<td></td>
-</tr>
-<tr>
-<td>fees[].prices[].rules[].durationTypeId</td>
-<td></td>
-</tr>
-<tr>
-<td>fees[].prices[].rules[].startDate</td>
-<td></td>
-</tr>
-<tr>
-<td>fees[].prices[].rules[].endDate</td>
-<td></td>
-</tr>
-<tr>
-<td>fees[].prices[].rules[].logicalOperatorId</td>
-<td>ie. AND / OR</td>
-</tr>
-<tr>
-<td>timetables[]</td>
-<td>Array of timetables for the course</td>
-</tr>
-<tr>
-<td>timetable</td>
-<td>Timetable object</td>
-</tr>
-<tr>
-<td>timetable.timetableTypeId</td>
-<td>ie. Full time / Part time / Other</td>
-</tr>
-<tr>
-<td>timetable.durationAmount</td>
-<td>Used to define an intensity, ie. 20 hrs/week</td>
-</tr>
-<tr>
-<td>timetable.durationTypeId</td>
-<td>Used to define an intensity, ie. 20 hrs/week</td>
-</tr>
-<tr>
-<td>timetable.perDurationTypeId</td>
-<td>Used to define an intensity, ie. 20 hrs/week</td>
-</tr>
-<tr>
-<td>timetable.items[]</td>
-<td>Array of items defining the timetable</td>
-</tr>
-<tr>
-<td>timetable.items[].day</td>
-<td></td>
-</tr>
-<tr>
-<td>timetable.items[].start</td>
-<td>Start time</td>
-</tr>
-<tr>
-<td>timetable.items[].end</td>
-<td>End time</td>
-</tr>
-<tr>
-<td>timetable.items[].description</td>
-<td></td>
-</tr>
-<tr>
-<td>startDates[]</td>
-<td>Array of start dates for the course</td>
-</tr>
-<tr>
-<td>startDates[].startDate</td>
-<td></td>
+<td>offeringCourseCategory</td>
+<td><a href="#offering-course-category">OfferingCourseCategory</a></td>
 </tr>
 </tbody></table>
-
-<h3 id="queries">Queries</h3>
-
-<ul>
-<li><code class="prettyprint">course(id: &lt;id&gt;)</code></li>
-<li><code class="prettyprint">courses(ids: [&lt;ids&gt;])</code></li>
-</ul>
-
-<h3 id="mutations">Mutations</h3>
-
-<ul>
-<li><code class="prettyprint">createCourse(input: &lt;body&gt;)</code></li>
-<li><code class="prettyprint">updateCourse(id: &lt;id&gt;, input: &lt;body&gt;)</code></li>
-<li><code class="prettyprint">deleteCourse(id: &lt;id&gt;)</code></li>
-</ul>
 
           <h2 id="accommodation">Accommodation</h2>
 
@@ -2780,6 +2524,237 @@ curl https://api.edvisor.io/graphql <span class="se">\</span>
 </tr>
 </tbody></table>
 
+          <h2 id="course-search-result">Course Search Result</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>offeringId</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td></td>
+</tr>
+<tr>
+<td>durationAmount</td>
+<td></td>
+</tr>
+<tr>
+<td>durationTypeId</td>
+<td></td>
+</tr>
+<tr>
+<td>startDate</td>
+<td></td>
+</tr>
+<tr>
+<td>durationType</td>
+<td><a href="#duration-type">DurationType</a></td>
+</tr>
+<tr>
+<td>offering</td>
+<td><a href="#offering">Offering</a></td>
+</tr>
+</tbody></table>
+
+<h3 id="queries">Queries</h3>
+<pre class="highlight shell"><code><span class="c">#example of using coursesGetList</span>
+
+curl https://api.edvisor.io/graphql <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer MY_API_KEY"</span> <span class="se">\</span>
+  -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{"query":"query CustomQueryName($pagination: PaginationInput, $filter: CourseSearchFilter) {coursesGetList(pagination: $pagination, filter: $filter) {count, data {offeringId}}}","variables":{"pagination":{"limit":10,"offset":0},"filter":{"age":{"eq":18}}}}'</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Query</th>
+<th>Return object</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coursesGetList(pagination: &lt;PaginationInput&gt;, filter: <a href="#course-search-filter">&lt;CourseSearchFilter&gt;</a>)</td>
+<td><a href="#list-result">ListResult</a></td>
+</tr>
+</tbody></table>
+
+          <h2 id="offering">Offering</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>offeringId</td>
+<td></td>
+</tr>
+<tr>
+<td>offeringTypeId</td>
+<td></td>
+</tr>
+<tr>
+<td>schoolId</td>
+<td></td>
+</tr>
+<tr>
+<td>agencyId</td>
+<td></td>
+</tr>
+<tr>
+<td>isEnabled</td>
+<td></td>
+</tr>
+<tr>
+<td>isDeleted</td>
+<td></td>
+</tr>
+<tr>
+<td>reqMinDurationAmount</td>
+<td></td>
+</tr>
+<tr>
+<td>reqMinDurationTypeId</td>
+<td></td>
+</tr>
+<tr>
+<td>reqMaxDurationAmount</td>
+<td></td>
+</tr>
+<tr>
+<td>reqMaxDurationTypeId</td>
+<td></td>
+</tr>
+<tr>
+<td>reqMinAge</td>
+<td></td>
+</tr>
+<tr>
+<td>reqMaxAge</td>
+<td></td>
+</tr>
+<tr>
+<td>availabilityStart</td>
+<td></td>
+</tr>
+<tr>
+<td>availabilityEnd</td>
+<td></td>
+</tr>
+<tr>
+<td>created</td>
+<td></td>
+</tr>
+<tr>
+<td>modified</td>
+<td></td>
+</tr>
+<tr>
+<td>offeringCourse</td>
+<td><a href="#course">Course</a></td>
+</tr>
+<tr>
+<td>school</td>
+<td><a href="#school">School</a></td>
+</tr>
+</tbody></table>
+
+          <h2 id="duration-type">Duration Type</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>durationTypeId</td>
+<td></td>
+</tr>
+<tr>
+<td>codeName</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h3 id="queries">Queries</h3>
+<pre class="highlight shell"><code><span class="c">#example of using durationTypes</span>
+
+curl https://api.edvisor.io/graphql <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer MY_API_KEY"</span> <span class="se">\</span>
+  -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{"query":"query {durationTypes {durationTypeId, codeName}}"}'</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Query</th>
+<th>Return object</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>durationTypes</td>
+<td>Array&lt;<a href="#duration-type">DurationType</a>&gt;</td>
+</tr>
+</tbody></table>
+
+          <h2 id="offering-course-category">Offering Course Category</h2>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>offeringCourseCategoryId</td>
+<td></td>
+</tr>
+<tr>
+<td>left</td>
+<td></td>
+</tr>
+<tr>
+<td>right</td>
+<td></td>
+</tr>
+<tr>
+<td>depth</td>
+<td></td>
+</tr>
+<tr>
+<td>codeName</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h3 id="queries">Queries</h3>
+<pre class="highlight shell"><code><span class="c">#example of using offeringCourseCategories</span>
+
+curl https://api.edvisor.io/graphql <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer MY_API_KEY"</span> <span class="se">\</span>
+  -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{"query":"query {offeringCourseCategories {offeringCourseCategoryId, codeName}}"}'</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Query</th>
+<th>Return object</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>offeringCourseCategories</td>
+<td>Array&lt;<a href="#offering-course-category">OfferingCourseCategory</a>&gt;</td>
+</tr>
+</tbody></table>
+
           <h1 id="inputs">Inputs</h1>
 
           <h2 id="paginationinput">PaginationInput</h2>
@@ -2799,6 +2774,70 @@ curl https://api.edvisor.io/graphql <span class="se">\</span>
 <tr>
 <td>offset</td>
 <td>The number of objects to offset the query by</td>
+</tr>
+</tbody></table>
+
+          <h2 id="date-range-input">Date Range Input</h2>
+
+<p>This input is used to represent a range input with dates</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>gt</td>
+<td>String (greater-than value)</td>
+</tr>
+<tr>
+<td>gte</td>
+<td>String (greater-than-equal-to value)</td>
+</tr>
+<tr>
+<td>lt</td>
+<td>String (less-than value)</td>
+</tr>
+<tr>
+<td>lte</td>
+<td>String (less-than-equal-to value)</td>
+</tr>
+<tr>
+<td>eq</td>
+<td>String (equal-to value)</td>
+</tr>
+</tbody></table>
+
+          <h2 id="integer-range-input">Integer Range Input</h2>
+
+<p>This input is used to represent a range input with integers</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>gt</td>
+<td>Int (greater-than value)</td>
+</tr>
+<tr>
+<td>gte</td>
+<td>Int (greater-than-equal-to value)</td>
+</tr>
+<tr>
+<td>lt</td>
+<td>Int (less-than value)</td>
+</tr>
+<tr>
+<td>lte</td>
+<td>Int (less-than-equal-to value)</td>
+</tr>
+<tr>
+<td>eq</td>
+<td>Int (equal-to value)</td>
 </tr>
 </tbody></table>
 
@@ -2831,6 +2870,46 @@ curl https://api.edvisor.io/graphql <span class="se">\</span>
 <tr>
 <td>isArchived</td>
 <td>Boolean</td>
+</tr>
+</tbody></table>
+
+          <h2 id="course-search-filter">Course Search Filter</h2>
+
+<p>This input is used to filter Course Search Result objects</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>age</td>
+<td><a href="#integer-range-input">IntegerRangeInput</a></td>
+</tr>
+<tr>
+<td>schoolIds</td>
+<td>Array&lt;Int&gt;</td>
+</tr>
+<tr>
+<td>offeringCourseCategoryIds</td>
+<td>Array&lt;Int&gt;</td>
+</tr>
+<tr>
+<td>googlePlaceIds</td>
+<td>Array&lt;String&gt;</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td><a href="#date-range-input">DateRangeInput</a></td>
+</tr>
+<tr>
+<td>duration</td>
+<td>Int</td>
+</tr>
+<tr>
+<td>durationTypeId</td>
+<td>Int (<a href="#duration-type">DurationType</a>)</td>
 </tr>
 </tbody></table>
 
