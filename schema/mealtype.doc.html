@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
+    <title>MealType</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
+</head>
+<body class="slds-scrollable--y">
+    <nav class="slds-grid slds-grid--vertical slds-col--rule-right">
+        <header class="slds-p-around--medium slds-col slds-shrik slds-grow-none">
+            <button class="slds-button slds-button--icon slds-float--right js-toggle-navigation less-than-medium">
+                <i class="material-icons">close</i>
+            </button>
+                <h3 class="slds-text-heading--medium"><a href="./">GraphQL Schema</a></h3>
+            <div class="slds-p-top--small">
+                <input id="type-search" type="text" placeholder="Search a type" autofocus="" class="slds-input" />
+            </div>
+        </header>
+        <div id="navication-scroll" class="slds-scrollable--y slds-col slds-grow">
+<div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+    <h4 class="slds-text-title--caps slds-p-around--medium">Schema</h4>
+    <ul>
+        <li  title="RootQueryType">
+            <a href="rootquerytype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RootQueryType
+            </a>
+        </li>
+        <li  title="RootMutationType">
+            <a href="rootmutationtype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RootMutationType
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+    <h4 class="slds-text-title--caps slds-p-around--medium">Scalars</h4>
+    <ul>
+        <li  title="Boolean">
+            <a href="boolean.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Boolean
+            </a>
+        </li>
+        <li  title="DateOnly">
+            <a href="dateonly.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                DateOnly
+            </a>
+        </li>
+        <li  title="DateTime">
+            <a href="datetime.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                DateTime
+            </a>
+        </li>
+        <li  title="Email">
+            <a href="email.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Email
+            </a>
+        </li>
+        <li  title="Float">
+            <a href="float.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Float
+            </a>
+        </li>
+        <li  title="Int">
+            <a href="int.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Int
+            </a>
+        </li>
+        <li  title="String">
+            <a href="string.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                String
+            </a>
+        </li>
+        <li  title="Time">
+            <a href="time.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Time
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+    <h4 class="slds-text-title--caps slds-p-around--medium">Enums</h4>
+    <ul>
+        <li  title="FeeOrderFields">
+            <a href="feeorderfields.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FeeOrderFields
+            </a>
+        </li>
+        <li  title="LanguageEnum">
+            <a href="languageenum.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                LanguageEnum
+            </a>
+        </li>
+        <li  title="NestedMutationType">
+            <a href="nestedmutationtype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                NestedMutationType
+            </a>
+        </li>
+        <li  title="OfferingPriceTemplatesOrderFields">
+            <a href="offeringpricetemplatesorderfields.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPriceTemplatesOrderFields
+            </a>
+        </li>
+        <li  title="OfferingsOrderFields">
+            <a href="offeringsorderfields.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingsOrderFields
+            </a>
+        </li>
+        <li  title="OfferingTimetableTemplateOrderFields">
+            <a href="offeringtimetabletemplateorderfields.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingTimetableTemplateOrderFields
+            </a>
+        </li>
+        <li  title="OrderDirectionType">
+            <a href="orderdirectiontype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OrderDirectionType
+            </a>
+        </li>
+        <li  title="StudentCurrentLocationTypeEnum">
+            <a href="studentcurrentlocationtypeenum.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentCurrentLocationTypeEnum
+            </a>
+        </li>
+        <li  title="StudentEnrollmentStatusEnum">
+            <a href="studentenrollmentstatusenum.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentEnrollmentStatusEnum
+            </a>
+        </li>
+        <li  title="TaskOrderFields">
+            <a href="taskorderfields.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                TaskOrderFields
+            </a>
+        </li>
+        <li  title="__DirectiveLocation">
+            <a href="directivelocation.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                __DirectiveLocation
+            </a>
+        </li>
+        <li  title="__TypeKind">
+            <a href="typekind.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                __TypeKind
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+    <h4 class="slds-text-title--caps slds-p-around--medium">Unions</h4>
+    <ul>
+        <li  title="OfferingSearchResult">
+            <a href="offeringsearchresult.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingSearchResult
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+    <h4 class="slds-text-title--caps slds-p-around--medium">Objects</h4>
+    <ul>
+        <li  title="Agency">
+            <a href="agency.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Agency
+            </a>
+        </li>
+        <li  title="AgencyCompany">
+            <a href="agencycompany.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AgencyCompany
+            </a>
+        </li>
+        <li  title="AgencyCompanyCurrency">
+            <a href="agencycompanycurrency.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AgencyCompanyCurrency
+            </a>
+        </li>
+        <li  title="AgencyCompanyCurrencyRate">
+            <a href="agencycompanycurrencyrate.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AgencyCompanyCurrencyRate
+            </a>
+        </li>
+        <li  title="AgencyCompanySchoolCompanyNote">
+            <a href="agencycompanyschoolcompanynote.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AgencyCompanySchoolCompanyNote
+            </a>
+        </li>
+        <li  title="AgencyPaymentMethod">
+            <a href="agencypaymentmethod.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AgencyPaymentMethod
+            </a>
+        </li>
+        <li  title="AppliedPromotionLineItem">
+            <a href="appliedpromotionlineitem.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AppliedPromotionLineItem
+            </a>
+        </li>
+        <li  title="BathroomType">
+            <a href="bathroomtype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                BathroomType
+            </a>
+        </li>
+        <li  title="Country">
+            <a href="country.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Country
+            </a>
+        </li>
+        <li  title="Currency">
+            <a href="currency.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Currency
+            </a>
+        </li>
+        <li  title="CustomOption">
+            <a href="customoption.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CustomOption
+            </a>
+        </li>
+        <li  title="CustomOptionSelection">
+            <a href="customoptionselection.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CustomOptionSelection
+            </a>
+        </li>
+        <li  title="CustomProperty">
+            <a href="customproperty.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CustomProperty
+            </a>
+        </li>
+        <li  title="CustomPropertyValue">
+            <a href="custompropertyvalue.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CustomPropertyValue
+            </a>
+        </li>
+        <li  title="DerivedPrice">
+            <a href="derivedprice.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                DerivedPrice
+            </a>
+        </li>
+        <li  title="DurationType">
+            <a href="durationtype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                DurationType
+            </a>
+        </li>
+        <li  title="EnglishLevel">
+            <a href="englishlevel.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                EnglishLevel
+            </a>
+        </li>
+        <li  title="EnrollmentDefinedField">
+            <a href="enrollmentdefinedfield.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                EnrollmentDefinedField
+            </a>
+        </li>
+        <li  title="EnrollmentDefinedFieldOption">
+            <a href="enrollmentdefinedfieldoption.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                EnrollmentDefinedFieldOption
+            </a>
+        </li>
+        <li  title="EnrollmentDefinedSection">
+            <a href="enrollmentdefinedsection.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                EnrollmentDefinedSection
+            </a>
+        </li>
+        <li  title="EnrollmentTemplate">
+            <a href="enrollmenttemplate.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                EnrollmentTemplate
+            </a>
+        </li>
+        <li  title="EnrollmentTemplateField">
+            <a href="enrollmenttemplatefield.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                EnrollmentTemplateField
+            </a>
+        </li>
+        <li  title="Fee">
+            <a href="fee.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Fee
+            </a>
+        </li>
+        <li  title="FeeDescription">
+            <a href="feedescription.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FeeDescription
+            </a>
+        </li>
+        <li  title="FeeListResultInterface">
+            <a href="feelistresultinterface.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FeeListResultInterface
+            </a>
+        </li>
+        <li  title="FeeName">
+            <a href="feename.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FeeName
+            </a>
+        </li>
+        <li  title="FeePrice">
+            <a href="feeprice.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FeePrice
+            </a>
+        </li>
+        <li  title="FieldType">
+            <a href="fieldtype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FieldType
+            </a>
+        </li>
+        <li  title="File">
+            <a href="file.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                File
+            </a>
+        </li>
+        <li  title="GooglePlace">
+            <a href="googleplace.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GooglePlace
+            </a>
+        </li>
+        <li  title="GooglePlaceAutocomplete">
+            <a href="googleplaceautocomplete.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GooglePlaceAutocomplete
+            </a>
+        </li>
+        <li  title="GooglePlaceLocation">
+            <a href="googleplacelocation.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GooglePlaceLocation
+            </a>
+        </li>
+        <li  title="Language">
+            <a href="language.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Language
+            </a>
+        </li>
+        <li  title="LogicalOperator">
+            <a href="logicaloperator.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                LogicalOperator
+            </a>
+        </li>
+        <li class="slds-is-active" title="MealType">
+            <a href="mealtype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                MealType
+            </a>
+        </li>
+        <li  title="Offering">
+            <a href="offering.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Offering
+            </a>
+        </li>
+        <li  title="OfferingAccommodation">
+            <a href="offeringaccommodation.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingAccommodation
+            </a>
+        </li>
+        <li  title="OfferingAccommodationCategory">
+            <a href="offeringaccommodationcategory.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingAccommodationCategory
+            </a>
+        </li>
+        <li  title="OfferingAccommodationSearchResult">
+            <a href="offeringaccommodationsearchresult.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingAccommodationSearchResult
+            </a>
+        </li>
+        <li  title="OfferingCourse">
+            <a href="offeringcourse.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingCourse
+            </a>
+        </li>
+        <li  title="OfferingCourseCategory">
+            <a href="offeringcoursecategory.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingCourseCategory
+            </a>
+        </li>
+        <li  title="OfferingCourseListResult">
+            <a href="offeringcourselistresult.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingCourseListResult
+            </a>
+        </li>
+        <li  title="OfferingCourseListResultListResultInterface">
+            <a href="offeringcourselistresultlistresultinterface.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingCourseListResultListResultInterface
+            </a>
+        </li>
+        <li  title="OfferingCourseSearchResult">
+            <a href="offeringcoursesearchresult.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingCourseSearchResult
+            </a>
+        </li>
+        <li  title="OfferingDescription">
+            <a href="offeringdescription.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingDescription
+            </a>
+        </li>
+        <li  title="OfferingListResultInterface">
+            <a href="offeringlistresultinterface.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingListResultInterface
+            </a>
+        </li>
+        <li  title="OfferingName">
+            <a href="offeringname.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingName
+            </a>
+        </li>
+        <li  title="OfferingNote">
+            <a href="offeringnote.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingNote
+            </a>
+        </li>
+        <li  title="OfferingPackage">
+            <a href="offeringpackage.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackage
+            </a>
+        </li>
+        <li  title="OfferingPackageOption">
+            <a href="offeringpackageoption.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageOption
+            </a>
+        </li>
+        <li  title="OfferingPackageOptionDerivedPrice">
+            <a href="offeringpackageoptionderivedprice.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageOptionDerivedPrice
+            </a>
+        </li>
+        <li  title="OfferingPackageOptionFeeItem">
+            <a href="offeringpackageoptionfeeitem.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageOptionFeeItem
+            </a>
+        </li>
+        <li  title="OfferingPackageOptionItem">
+            <a href="offeringpackageoptionitem.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageOptionItem
+            </a>
+        </li>
+        <li  title="OfferingPackageOptionName">
+            <a href="offeringpackageoptionname.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageOptionName
+            </a>
+        </li>
+        <li  title="OfferingPackageOptionSearchResult">
+            <a href="offeringpackageoptionsearchresult.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageOptionSearchResult
+            </a>
+        </li>
+        <li  title="OfferingPrice">
+            <a href="offeringprice.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPrice
+            </a>
+        </li>
+        <li  title="OfferingPriceTemplate">
+            <a href="offeringpricetemplate.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPriceTemplate
+            </a>
+        </li>
+        <li  title="OfferingPriceTemplateListResultInterface">
+            <a href="offeringpricetemplatelistresultinterface.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPriceTemplateListResultInterface
+            </a>
+        </li>
+        <li  title="OfferingSearchFilterOptionsResult">
+            <a href="offeringsearchfilteroptionsresult.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingSearchFilterOptionsResult
+            </a>
+        </li>
+        <li  title="OfferingService">
+            <a href="offeringservice.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingService
+            </a>
+        </li>
+        <li  title="OfferingServiceSearchResult">
+            <a href="offeringservicesearchresult.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingServiceSearchResult
+            </a>
+        </li>
+        <li  title="OfferingStartDateDerived">
+            <a href="offeringstartdatederived.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingStartDateDerived
+            </a>
+        </li>
+        <li  title="OfferingStartDateTemplate">
+            <a href="offeringstartdatetemplate.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingStartDateTemplate
+            </a>
+        </li>
+        <li  title="OfferingStartDateTemplateManualDate">
+            <a href="offeringstartdatetemplatemanualdate.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingStartDateTemplateManualDate
+            </a>
+        </li>
+        <li  title="OfferingStudentNationalityEligible">
+            <a href="offeringstudentnationalityeligible.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingStudentNationalityEligible
+            </a>
+        </li>
+        <li  title="OfferingTimetableTemplate">
+            <a href="offeringtimetabletemplate.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingTimetableTemplate
+            </a>
+        </li>
+        <li  title="OfferingTimetableTemplateItem">
+            <a href="offeringtimetabletemplateitem.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingTimetableTemplateItem
+            </a>
+        </li>
+        <li  title="OfferingTimetableTemplateItemDescription">
+            <a href="offeringtimetabletemplateitemdescription.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingTimetableTemplateItemDescription
+            </a>
+        </li>
+        <li  title="OfferingTimetableTemplateListResultInterface">
+            <a href="offeringtimetabletemplatelistresultinterface.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingTimetableTemplateListResultInterface
+            </a>
+        </li>
+        <li  title="PaymentMethodType">
+            <a href="paymentmethodtype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                PaymentMethodType
+            </a>
+        </li>
+        <li  title="Photo">
+            <a href="photo.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Photo
+            </a>
+        </li>
+        <li  title="PriceRule">
+            <a href="pricerule.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                PriceRule
+            </a>
+        </li>
+        <li  title="Promotion">
+            <a href="promotion.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Promotion
+            </a>
+        </li>
+        <li  title="PromotionType">
+            <a href="promotiontype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                PromotionType
+            </a>
+        </li>
+        <li  title="Quote">
+            <a href="quote.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Quote
+            </a>
+        </li>
+        <li  title="QuoteStatus">
+            <a href="quotestatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                QuoteStatus
+            </a>
+        </li>
+        <li  title="ResponseType">
+            <a href="responsetype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                ResponseType
+            </a>
+        </li>
+        <li  title="RoomType">
+            <a href="roomtype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RoomType
+            </a>
+        </li>
+        <li  title="School">
+            <a href="school.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                School
+            </a>
+        </li>
+        <li  title="SchoolCalendarDate">
+            <a href="schoolcalendardate.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SchoolCalendarDate
+            </a>
+        </li>
+        <li  title="SchoolCalendarRange">
+            <a href="schoolcalendarrange.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SchoolCalendarRange
+            </a>
+        </li>
+        <li  title="SchoolCompany">
+            <a href="schoolcompany.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SchoolCompany
+            </a>
+        </li>
+        <li  title="SchoolDescription">
+            <a href="schooldescription.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SchoolDescription
+            </a>
+        </li>
+        <li  title="SchoolDurationTypeDefinition">
+            <a href="schooldurationtypedefinition.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SchoolDurationTypeDefinition
+            </a>
+        </li>
+        <li  title="SchoolHighlight">
+            <a href="schoolhighlight.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SchoolHighlight
+            </a>
+        </li>
+        <li  title="SchoolHoliday">
+            <a href="schoolholiday.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SchoolHoliday
+            </a>
+        </li>
+        <li  title="SchoolPaymentPolicy">
+            <a href="schoolpaymentpolicy.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SchoolPaymentPolicy
+            </a>
+        </li>
+        <li  title="SchoolTerms">
+            <a href="schoolterms.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SchoolTerms
+            </a>
+        </li>
+        <li  title="Student">
+            <a href="student.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Student
+            </a>
+        </li>
+        <li  title="StudentCoursePreference">
+            <a href="studentcoursepreference.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentCoursePreference
+            </a>
+        </li>
+        <li  title="StudentCurrentPipelineStage">
+            <a href="studentcurrentpipelinestage.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentCurrentPipelineStage
+            </a>
+        </li>
+        <li  title="StudentEnrollment">
+            <a href="studentenrollment.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentEnrollment
+            </a>
+        </li>
+        <li  title="StudentEnrollmentOfferingItem">
+            <a href="studentenrollmentofferingitem.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentEnrollmentOfferingItem
+            </a>
+        </li>
+        <li  title="StudentEnrollmentPreview">
+            <a href="studentenrollmentpreview.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentEnrollmentPreview
+            </a>
+        </li>
+        <li  title="StudentListResultInterface">
+            <a href="studentlistresultinterface.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentListResultInterface
+            </a>
+        </li>
+        <li  title="StudentLocationPreference">
+            <a href="studentlocationpreference.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentLocationPreference
+            </a>
+        </li>
+        <li  title="StudentPipelineStageStepCompleted">
+            <a href="studentpipelinestagestepcompleted.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentPipelineStageStepCompleted
+            </a>
+        </li>
+        <li  title="StudentQuote">
+            <a href="studentquote.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentQuote
+            </a>
+        </li>
+        <li  title="StudentQuoteOption">
+            <a href="studentquoteoption.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentQuoteOption
+            </a>
+        </li>
+        <li  title="StudentQuoteOptionItem">
+            <a href="studentquoteoptionitem.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentQuoteOptionItem
+            </a>
+        </li>
+        <li  title="StudentQuoteStatus">
+            <a href="studentquotestatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentQuoteStatus
+            </a>
+        </li>
+        <li  title="StudentSchoolPreference">
+            <a href="studentschoolpreference.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentSchoolPreference
+            </a>
+        </li>
+        <li  title="StudentSecondaryContact">
+            <a href="studentsecondarycontact.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentSecondaryContact
+            </a>
+        </li>
+        <li  title="StudentStudyRecord">
+            <a href="studentstudyrecord.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentStudyRecord
+            </a>
+        </li>
+        <li  title="StudentTag">
+            <a href="studenttag.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentTag
+            </a>
+        </li>
+        <li  title="Task">
+            <a href="task.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Task
+            </a>
+        </li>
+        <li  title="TaskListResultInterface">
+            <a href="tasklistresultinterface.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                TaskListResultInterface
+            </a>
+        </li>
+        <li  title="User">
+            <a href="user.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                User
+            </a>
+        </li>
+        <li  title="__Directive">
+            <a href="directive.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                __Directive
+            </a>
+        </li>
+        <li  title="__EnumValue">
+            <a href="enumvalue.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                __EnumValue
+            </a>
+        </li>
+        <li  title="__Field">
+            <a href="field.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                __Field
+            </a>
+        </li>
+        <li  title="__InputValue">
+            <a href="inputvalue.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                __InputValue
+            </a>
+        </li>
+        <li  title="__Schema">
+            <a href="schema.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                __Schema
+            </a>
+        </li>
+        <li  title="__Type">
+            <a href="type.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                __Type
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+    <h4 class="slds-text-title--caps slds-p-around--medium">Input Objects</h4>
+    <ul>
+        <li  title="AgencyCompanySchoolCompanyNoteFilter">
+            <a href="agencycompanyschoolcompanynotefilter.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AgencyCompanySchoolCompanyNoteFilter
+            </a>
+        </li>
+        <li  title="CustomPropertyValueInput">
+            <a href="custompropertyvalueinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CustomPropertyValueInput
+            </a>
+        </li>
+        <li  title="CustomPropertyValueInputNestedRelationInterfaceInput">
+            <a href="custompropertyvalueinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CustomPropertyValueInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="DateOnlyRangeInput">
+            <a href="dateonlyrangeinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                DateOnlyRangeInput
+            </a>
+        </li>
+        <li  title="DateTimeRangeInput">
+            <a href="datetimerangeinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                DateTimeRangeInput
+            </a>
+        </li>
+        <li  title="FeeDescriptionInput">
+            <a href="feedescriptioninput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FeeDescriptionInput
+            </a>
+        </li>
+        <li  title="FeeDescriptionInputNestedRelationInterfaceInput">
+            <a href="feedescriptioninputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FeeDescriptionInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="FeeInput">
+            <a href="feeinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FeeInput
+            </a>
+        </li>
+        <li  title="FeeInputNestedRelationInterfaceInput">
+            <a href="feeinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FeeInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="FeeNameInput">
+            <a href="feenameinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FeeNameInput
+            </a>
+        </li>
+        <li  title="FeeNameInputNestedRelationInterfaceInput">
+            <a href="feenameinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FeeNameInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="FeePriceInput">
+            <a href="feepriceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FeePriceInput
+            </a>
+        </li>
+        <li  title="FeePriceInputNestedRelationInterfaceInput">
+            <a href="feepriceinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FeePriceInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="FeesFilterInput">
+            <a href="feesfilterinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FeesFilterInput
+            </a>
+        </li>
+        <li  title="IntegerRangeInput">
+            <a href="integerrangeinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                IntegerRangeInput
+            </a>
+        </li>
+        <li  title="OfferingAccommodationInput">
+            <a href="offeringaccommodationinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingAccommodationInput
+            </a>
+        </li>
+        <li  title="OfferingAccommodationInputNestedRelationInterfaceInput">
+            <a href="offeringaccommodationinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingAccommodationInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingCourseInput">
+            <a href="offeringcourseinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingCourseInput
+            </a>
+        </li>
+        <li  title="OfferingCourseInputNestedRelationInterfaceInput">
+            <a href="offeringcourseinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingCourseInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingCourseListFilter">
+            <a href="offeringcourselistfilter.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingCourseListFilter
+            </a>
+        </li>
+        <li  title="OfferingCoursePriceFilter">
+            <a href="offeringcoursepricefilter.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingCoursePriceFilter
+            </a>
+        </li>
+        <li  title="OfferingDescriptionInput">
+            <a href="offeringdescriptioninput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingDescriptionInput
+            </a>
+        </li>
+        <li  title="OfferingDescriptionInputNestedRelationInterfaceInput">
+            <a href="offeringdescriptioninputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingDescriptionInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingInput">
+            <a href="offeringinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingInput
+            </a>
+        </li>
+        <li  title="OfferingInputNestedRelationInterfaceInput">
+            <a href="offeringinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingNameInput">
+            <a href="offeringnameinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingNameInput
+            </a>
+        </li>
+        <li  title="OfferingNameInputNestedRelationInterfaceInput">
+            <a href="offeringnameinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingNameInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingNoteInput">
+            <a href="offeringnoteinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingNoteInput
+            </a>
+        </li>
+        <li  title="OfferingNoteInputNestedRelationInterfaceInput">
+            <a href="offeringnoteinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingNoteInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingPackageInput">
+            <a href="offeringpackageinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageInput
+            </a>
+        </li>
+        <li  title="OfferingPackageInputNestedRelationInterfaceInput">
+            <a href="offeringpackageinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingPackageOptionFeeItemInput">
+            <a href="offeringpackageoptionfeeiteminput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageOptionFeeItemInput
+            </a>
+        </li>
+        <li  title="OfferingPackageOptionFeeItemInputNestedRelationInterfaceInput">
+            <a href="offeringpackageoptionfeeiteminputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageOptionFeeItemInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingPackageOptionInput">
+            <a href="offeringpackageoptioninput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageOptionInput
+            </a>
+        </li>
+        <li  title="OfferingPackageOptionInputNestedRelationInterfaceInput">
+            <a href="offeringpackageoptioninputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageOptionInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingPackageOptionItemInput">
+            <a href="offeringpackageoptioniteminput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageOptionItemInput
+            </a>
+        </li>
+        <li  title="OfferingPackageOptionItemInputNestedRelationInterfaceInput">
+            <a href="offeringpackageoptioniteminputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageOptionItemInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingPackageOptionNameInput">
+            <a href="offeringpackageoptionnameinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageOptionNameInput
+            </a>
+        </li>
+        <li  title="OfferingPackageOptionNameInputNestedRelationInterfaceInput">
+            <a href="offeringpackageoptionnameinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageOptionNameInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingPackageOptionPriceFilter">
+            <a href="offeringpackageoptionpricefilter.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPackageOptionPriceFilter
+            </a>
+        </li>
+        <li  title="OfferingPriceInput">
+            <a href="offeringpriceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPriceInput
+            </a>
+        </li>
+        <li  title="OfferingPriceInputNestedRelationInterfaceInput">
+            <a href="offeringpriceinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPriceInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingPriceTemplateInput">
+            <a href="offeringpricetemplateinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPriceTemplateInput
+            </a>
+        </li>
+        <li  title="OfferingPriceTemplateInputNestedRelationInterfaceInput">
+            <a href="offeringpricetemplateinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPriceTemplateInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingPriceTemplatesFilterInput">
+            <a href="offeringpricetemplatesfilterinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingPriceTemplatesFilterInput
+            </a>
+        </li>
+        <li  title="OfferingSearchResultFilter">
+            <a href="offeringsearchresultfilter.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingSearchResultFilter
+            </a>
+        </li>
+        <li  title="OfferingServiceInput">
+            <a href="offeringserviceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingServiceInput
+            </a>
+        </li>
+        <li  title="OfferingServiceInputNestedRelationInterfaceInput">
+            <a href="offeringserviceinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingServiceInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingsFilterInput">
+            <a href="offeringsfilterinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingsFilterInput
+            </a>
+        </li>
+        <li  title="OfferingStartDateTemplateInput">
+            <a href="offeringstartdatetemplateinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingStartDateTemplateInput
+            </a>
+        </li>
+        <li  title="OfferingStartDateTemplateInputNestedRelationInterfaceInput">
+            <a href="offeringstartdatetemplateinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingStartDateTemplateInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingStartDateTemplateManualDateInput">
+            <a href="offeringstartdatetemplatemanualdateinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingStartDateTemplateManualDateInput
+            </a>
+        </li>
+        <li  title="OfferingStartDateTemplateManualDateInputNestedRelationInterfaceInput">
+            <a href="offeringstartdatetemplatemanualdateinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingStartDateTemplateManualDateInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingStudentNationalityEligibleInput">
+            <a href="offeringstudentnationalityeligibleinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingStudentNationalityEligibleInput
+            </a>
+        </li>
+        <li  title="OfferingStudentNationalityEligibleInputNestedRelationInterfaceInput">
+            <a href="offeringstudentnationalityeligibleinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingStudentNationalityEligibleInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingTimetableTemplateInput">
+            <a href="offeringtimetabletemplateinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingTimetableTemplateInput
+            </a>
+        </li>
+        <li  title="OfferingTimetableTemplateInputNestedRelationInterfaceInput">
+            <a href="offeringtimetabletemplateinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingTimetableTemplateInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingTimetableTemplateItemDescriptionInput">
+            <a href="offeringtimetabletemplateitemdescriptioninput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingTimetableTemplateItemDescriptionInput
+            </a>
+        </li>
+        <li  title="OfferingTimetableTemplateItemDescriptionInputNestedRelationInterfaceInput">
+            <a href="offeringtimetabletemplateitemdescriptioninputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingTimetableTemplateItemDescriptionInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingTimetableTemplateItemInput">
+            <a href="offeringtimetabletemplateiteminput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingTimetableTemplateItemInput
+            </a>
+        </li>
+        <li  title="OfferingTimetableTemplateItemInputNestedRelationInterfaceInput">
+            <a href="offeringtimetabletemplateiteminputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingTimetableTemplateItemInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="OfferingTimetableTemplatesFilterInput">
+            <a href="offeringtimetabletemplatesfilterinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                OfferingTimetableTemplatesFilterInput
+            </a>
+        </li>
+        <li  title="PaginationInput">
+            <a href="paginationinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                PaginationInput
+            </a>
+        </li>
+        <li  title="PriceRuleInput">
+            <a href="priceruleinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                PriceRuleInput
+            </a>
+        </li>
+        <li  title="PriceRuleInputNestedRelationInterfaceInput">
+            <a href="priceruleinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                PriceRuleInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="PromotionInput">
+            <a href="promotioninput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                PromotionInput
+            </a>
+        </li>
+        <li  title="SchoolCompanyInput">
+            <a href="schoolcompanyinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SchoolCompanyInput
+            </a>
+        </li>
+        <li  title="SchoolHighlightInput">
+            <a href="schoolhighlightinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SchoolHighlightInput
+            </a>
+        </li>
+        <li  title="SchoolHolidayInput">
+            <a href="schoolholidayinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SchoolHolidayInput
+            </a>
+        </li>
+        <li  title="SchoolInput">
+            <a href="schoolinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SchoolInput
+            </a>
+        </li>
+        <li  title="SendStudentQuoteInput">
+            <a href="sendstudentquoteinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SendStudentQuoteInput
+            </a>
+        </li>
+        <li  title="StudentCoursePreferenceInput">
+            <a href="studentcoursepreferenceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentCoursePreferenceInput
+            </a>
+        </li>
+        <li  title="StudentCoursePreferenceInputNestedRelationInterfaceInput">
+            <a href="studentcoursepreferenceinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentCoursePreferenceInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="StudentCurrentPipelineStageInput">
+            <a href="studentcurrentpipelinestageinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentCurrentPipelineStageInput
+            </a>
+        </li>
+        <li  title="StudentCurrentPipelineStageInputNestedRelationInterfaceInput">
+            <a href="studentcurrentpipelinestageinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentCurrentPipelineStageInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="StudentEnrollmentFieldValueInput">
+            <a href="studentenrollmentfieldvalueinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentEnrollmentFieldValueInput
+            </a>
+        </li>
+        <li  title="StudentEnrollmentInput">
+            <a href="studentenrollmentinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentEnrollmentInput
+            </a>
+        </li>
+        <li  title="StudentEnrollmentOfferingItemInput">
+            <a href="studentenrollmentofferingiteminput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentEnrollmentOfferingItemInput
+            </a>
+        </li>
+        <li  title="StudentInput">
+            <a href="studentinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentInput
+            </a>
+        </li>
+        <li  title="StudentLocationPreferenceInput">
+            <a href="studentlocationpreferenceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentLocationPreferenceInput
+            </a>
+        </li>
+        <li  title="StudentLocationPreferenceInputNestedRelationInterfaceInput">
+            <a href="studentlocationpreferenceinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentLocationPreferenceInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="StudentPipelineStageStepCompletedInput">
+            <a href="studentpipelinestagestepcompletedinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentPipelineStageStepCompletedInput
+            </a>
+        </li>
+        <li  title="StudentPipelineStageStepCompletedInputNestedRelationInterfaceInput">
+            <a href="studentpipelinestagestepcompletedinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentPipelineStageStepCompletedInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="StudentQuoteInput">
+            <a href="studentquoteinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentQuoteInput
+            </a>
+        </li>
+        <li  title="StudentQuoteOptionInput">
+            <a href="studentquoteoptioninput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentQuoteOptionInput
+            </a>
+        </li>
+        <li  title="StudentQuoteOptionInputNestedRelationInterfaceInput">
+            <a href="studentquoteoptioninputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentQuoteOptionInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="StudentQuoteOptionOfferingInput">
+            <a href="studentquoteoptionofferinginput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentQuoteOptionOfferingInput
+            </a>
+        </li>
+        <li  title="StudentQuoteOptionOfferingInputNestedRelationInterfaceInput">
+            <a href="studentquoteoptionofferinginputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentQuoteOptionOfferingInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="StudentSchoolPreferenceInput">
+            <a href="studentschoolpreferenceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentSchoolPreferenceInput
+            </a>
+        </li>
+        <li  title="StudentSchoolPreferenceInputNestedRelationInterfaceInput">
+            <a href="studentschoolpreferenceinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentSchoolPreferenceInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="StudentSecondaryContactInput">
+            <a href="studentsecondarycontactinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentSecondaryContactInput
+            </a>
+        </li>
+        <li  title="StudentSecondaryContactInputNestedRelationInterfaceInput">
+            <a href="studentsecondarycontactinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentSecondaryContactInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="StudentsFilterInput">
+            <a href="studentsfilterinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentsFilterInput
+            </a>
+        </li>
+        <li  title="StudentStudyRecordInput">
+            <a href="studentstudyrecordinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentStudyRecordInput
+            </a>
+        </li>
+        <li  title="StudentStudyRecordInputNestedRelationInterfaceInput">
+            <a href="studentstudyrecordinputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentStudyRecordInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="StudentTagInput">
+            <a href="studenttaginput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentTagInput
+            </a>
+        </li>
+        <li  title="StudentTagInputNestedRelationInterfaceInput">
+            <a href="studenttaginputnestedrelationinterfaceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentTagInputNestedRelationInterfaceInput
+            </a>
+        </li>
+        <li  title="StudentUpsertInput">
+            <a href="studentupsertinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StudentUpsertInput
+            </a>
+        </li>
+        <li  title="TasksFilterInput">
+            <a href="tasksfilterinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                TasksFilterInput
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+    <h4 class="slds-text-title--caps slds-p-around--medium">Directives</h4>
+    <ul>
+        <li  title="deprecated">
+            <a href="deprecated.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                deprecated
+            </a>
+        </li>
+        <li  title="include">
+            <a href="include.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                include
+            </a>
+        </li>
+        <li  title="skip">
+            <a href="skip.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                skip
+            </a>
+        </li>
+    </ul>
+</div>
+        </div>
+    </nav>
+    <main><section class="title slds-theme--inverse">
+    <div class="container slds-grid">
+        <div>
+        <button class="slds-button js-toggle-navigation less-than-medium">
+            <i class="material-icons slds-button__icon slds-button__icon--left">menu</i>
+            <span class="slds-text-title--caps">Types<span>
+        </button>
+        </div>
+        </div>
+    </div>
+    <div class="container">
+        <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
+        <h1 class="slds-text-heading--large">MealType</h1>
+        <div class="slds-text-body--regular"></div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <h2 id="graphql-schema-definition" class="graphdoc-section__title slds-text-heading--medium slds-m-top--small">
+            <a href="#graphql-schema-definition">
+                <i class="material-icons">link</i>
+            </a>
+            GraphQL Schema definition
+        </h2>
+        <code class="highlight"><ul class="code" style="padding-left:28px"><li><span class="keyword operator ts">type</span> <span class="identifier">MealType</span> {</li><li></li><li><span class="tab"><span class="meta">mealTypeId</span>: <a class="support type" href="int.doc.html">Int</a> </span></li><li></li><li><span class="tab"><span class="meta">codeName</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li>}</li></ul></code>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <h2 id="require-by" class="graphdoc-section__title slds-text-heading--medium slds-m-top--small">
+            <a href="#require-by">
+                <i class="material-icons">link</i>
+            </a>
+            Require by
+        </h2>
+        <ul class="require-by"><li><a href="offeringaccommodation.doc.html" title="OfferingAccommodation - ">OfferingAccommodation<em>null</em></a><li><li><a href="studentquoteoptionitem.doc.html" title="StudentQuoteOptionItem - ">StudentQuoteOptionItem<em>null</em></a><li></ul>
+    </div>
+</section>
+<footer>
+<div class="container slds-p-around--large">
+    <p class="slds-text-align--right slds-text-title--caps">
+        Generated with <a href="https://github.com/2fd/graphdoc#readme" target="_blank">graphdoc 2.4.0</a>
+    </p>
+</div>
+</footer>
+</main>
+    <script src="./scripts/focus-active.js"></script>
+    <script src="./scripts/filter-types.js"></script>
+    <script src="./scripts/toggle-navigation.js"></script>
+</body>
